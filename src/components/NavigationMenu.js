@@ -64,7 +64,7 @@ const NavigationMenu = ({ currentPage }) => {
             aria-label="Search"
           />
           <button class="btn btn-outline-light my-2 my-sm-0" type="submit">
-            Search
+            Search 🔍
           </button>
         </form>
       </div>
