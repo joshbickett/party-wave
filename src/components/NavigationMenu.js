@@ -14,7 +14,7 @@ const NavigationMenu = ({ currentPage }) => {
   };
 
   return (
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <a class="navbar-brand" href="#">
         apz.ai
       </a>

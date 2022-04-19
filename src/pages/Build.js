@@ -7,6 +7,7 @@ const Build = () => {
     <div className="App">
       <NavigationMenu currentPage={"Build"} />
       <div class="container">Come Build</div>
+      <Footer />
     </div>
   );
 };
