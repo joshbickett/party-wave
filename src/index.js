@@ -1,7 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import App from "./App";
+import Home from "./pages/Home";
+import Build from "./pages/Build";
 import reportWebVitals from "./reportWebVitals";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -11,7 +12,8 @@ root.render(
   <BrowserRouter>
     <div className="App">
       <Routes>
-        <Route path="/" element={<App />}></Route>
+        <Route path="/" element={<Home />}></Route>
+        <Route path="/build" element={<Build />}></Route>
         <Route
           path="*"
           element={

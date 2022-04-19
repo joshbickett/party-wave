@@ -1,7 +1,18 @@
 import styled from "@emotion/styled";
 import icon from "../assets/icon.png";
 
-const NavigationMenu = () => {
+const NavigationMenu = ({ currentPage }) => {
+  const pages = [
+    { name: "Home", url: "/" },
+    { name: "Build", url: "/build" },
+    // { name: "Join Waitlist", url: "/waitlist" },
+  ];
+
+  const onNavClick = (url) => {
+    console.log("window.location: ", window.location);
+    window.location.href = window.location.origin + url;
+  };
+
   return (
     <nav class="navbar navbar-expand-lg navbar-light">
       <a class="navbar-brand" href="#">
@@ -21,16 +32,29 @@ const NavigationMenu = () => {
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              Discover
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="#">
-              Build
-            </a>
-          </li>
+          {pages.map((page) => {
+            if (currentPage === page.name) {
+              return (
+                <li class="nav-item">
+                  <a class="nav-link active">
+                    <NavItem onClick={() => onNavClick(page.url)}>
+                      {page.name}
+                    </NavItem>
+                  </a>
+                </li>
+              );
+            } else {
+              return (
+                <li class="nav-item">
+                  <a class="nav-link">
+                    <NavItem onClick={() => onNavClick(page.url)}>
+                      {page.name}
+                    </NavItem>
+                  </a>
+                </li>
+              );
+            }
+          })}
         </ul>
         <form class="form-inline my-2 my-lg-0">
           <input
@@ -49,3 +73,7 @@ const NavigationMenu = () => {
 };
 
 export default NavigationMenu;
+
+const NavItem = styled.div`
+  padding: 5px;
+`;

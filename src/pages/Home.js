@@ -1,11 +1,11 @@
-import logo from "./logo.svg";
-import "./App.css";
-import NavigationMenu from "./components/NavigationMenu";
+import logo from "../logo.svg";
+import "../App.css";
+import NavigationMenu from "../components/NavigationMenu";
 
-function App() {
+const Home = () => {
   return (
     <div className="App">
-      <NavigationMenu />
+      <NavigationMenu currentPage={"Home"} />
       <div class="container">
         <div class="row" style={{ margin: "80px" }}>
           <div class="col-sm"></div>
@@ -46,6 +46,6 @@ function App() {
       </div>
     </div>
   );
-}
+};
 
-export default App;
+export default Home;
