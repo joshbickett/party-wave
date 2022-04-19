@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import Home from "./pages/Home";
 import Build from "./pages/Build";
+import Learn from "./pages/Learn";
 import reportWebVitals from "./reportWebVitals";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -14,6 +15,7 @@ root.render(
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/build" element={<Build />}></Route>
+        <Route path="/learn" element={<Learn />}></Route>
         <Route
           path="*"
           element={
