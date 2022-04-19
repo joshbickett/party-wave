@@ -1,6 +1,7 @@
 import logo from "../logo.svg";
 import "../App.css";
 import NavigationMenu from "../components/NavigationMenu";
+import Footer from "../components/Footer";
 
 const Build = () => {
   return (
