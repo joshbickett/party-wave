@@ -3,9 +3,9 @@ import icon from "../assets/icon.png";
 
 const NavigationMenu = ({ currentPage }) => {
   const pages = [
-    { name: "Home", url: "/" },
+    { name: "Discover", url: "/" },
     { name: "Build", url: "/build" },
-    // { name: "Join Waitlist", url: "/waitlist" },
+    { name: "Learn", url: "/learn" },
   ];
 
   const onNavClick = (url) => {
@@ -14,9 +14,9 @@ const NavigationMenu = ({ currentPage }) => {
   };
 
   return (
-    <nav class="navbar navbar-expand-lg navbar-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
       <a class="navbar-brand" href="#">
-        projectmap.ai
+        apz.ai
       </a>
       <button
         class="navbar-toggler"
@@ -56,14 +56,14 @@ const NavigationMenu = ({ currentPage }) => {
             }
           })}
         </ul>
-        <form class="form-inline my-2 my-lg-0">
+        <form class="form-inline my-2 my-lg-0 ">
           <input
             class="form-control mr-sm-2"
             type="search"
             placeholder="Search"
             aria-label="Search"
           />
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+          <button class="btn btn-outline-light my-2 my-sm-0" type="submit">
             Search
           </button>
         </form>
@@ -76,4 +76,5 @@ export default NavigationMenu;
 
 const NavItem = styled.div`
   padding: 5px;
+  cursor: pointer;
 `;
