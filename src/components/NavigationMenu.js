@@ -16,7 +16,7 @@ const NavigationMenu = ({ currentPage }) => {
   return (
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <a class="navbar-brand" href="#">
-        apz.ai
+        starthere.ai
       </a>
       <button
         class="navbar-toggler"
@@ -56,6 +56,7 @@ const NavigationMenu = ({ currentPage }) => {
             }
           })}
         </ul>
+
         <form class="form-inline my-2 my-lg-0 ">
           <input
             class="form-control mr-sm-2"
@@ -67,6 +68,9 @@ const NavigationMenu = ({ currentPage }) => {
             Search 🔍
           </button>
         </form>
+        <button class="btn bg-light ml-5" type="submit">
+          Submit Project
+        </button>
       </div>
     </nav>
   );
