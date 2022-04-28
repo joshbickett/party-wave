@@ -6,11 +6,50 @@ import Footer from "../components/Footer";
 import { useState } from "react";
 
 const Explore = () => {
-  const apps = [
+  const topApps = [
     {
       icon: "here",
       name: "makememe.ai",
       description: "Make memes in under 5 seconds using ai",
+      tags: ["gpt-3", "python"],
+    },
+    {
+      icon: "here",
+      name: "Cool stuff",
+      description: "This is cool AI Stuff",
+      tags: ["gpt-3", "funny"],
+    },
+    {
+      icon: "here",
+      name: "More cool stuff",
+      description: "It never end!",
+      tags: ["gpt-3", "funny"],
+    },
+  ];
+
+  const newApps = [
+    {
+      icon: "here",
+      name: "makesong.ai",
+      description: "Make a song in under 5 seconds using ai",
+      tags: ["gpt-3", "python"],
+    },
+    {
+      icon: "here",
+      name: "Cool stuff",
+      description: "This is cool AI Stuff",
+      tags: ["gpt-3", "funny"],
+    },
+    {
+      icon: "here",
+      name: "More cool stuff",
+      description: "It never end!",
+      tags: ["gpt-3", "funny"],
+    },
+    {
+      icon: "here",
+      name: "makesong.ai",
+      description: "Make a song in under 5 seconds using ai",
       tags: ["gpt-3", "python"],
     },
     {
@@ -101,10 +140,10 @@ const Explore = () => {
             class="col-md-3"
             style={{ margin: "10px 0", borderRight: "1px solid gray" }}
           >
-            <h5>Top apps this week 🎉</h5>
+            <h5>Top apps this month 🎉</h5>
           </div>
           <div class="col-md-6" style={{ margin: "10px" }}>
-            {apps.map((app) => {
+            {topApps.map((app) => {
               return (
                 <div
                   class="row"
@@ -165,11 +204,35 @@ const Explore = () => {
         <div class="row mt-2 bg-white" style={{ padding: "30px 0" }}>
           <div class="col-md-1"></div>
           <div
-            class="col-md-6 "
+            class="col-md-7 "
             style={{ marginTop: "5px", borderRadius: "5px" }}
           >
-            <div class="row ml-2" style={{ marginBottom: "10px" }}>
-              <h5 class="mt-3">New by Category</h5>
+            <div class="row ml-2" style={{ marginBottom: "25px" }}>
+              <h5 class="mt-3">Top </h5>
+              <div class="dropdown ml-2 mt-0 mt-2">
+                <button
+                  class="btn btn-secondary dropdown-toggle"
+                  type="button"
+                  id="dropdownMenuButton"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  Today
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" href="#">
+                    Today
+                  </a>
+                  <a class="dropdown-item" href="#">
+                    This week
+                  </a>
+                  <a class="dropdown-item" href="#">
+                    This month
+                  </a>
+                </div>
+              </div>
+              <h5 class="mt-3 ml-2 mr-1">by Category</h5>
               <div class="dropdown ml-2 mt-0 mt-2">
                 <button
                   class="btn btn-secondary dropdown-toggle"
@@ -197,7 +260,7 @@ const Explore = () => {
                 </div>
               </div>
             </div>
-            {apps.map((app) => {
+            {newApps.map((app) => {
               return (
                 <div
                   class="row"
@@ -249,18 +312,37 @@ const Explore = () => {
                 </div>
               );
             })}
+            <button
+              type="button"
+              class="btn btn-dark"
+              style={{ width: "20%", marginTop: "10px" }}
+            >
+              See more
+            </button>
           </div>
-          <div
-            class="col-md-4 bg-light"
-            style={{ marginTop: "5px", borderRadius: "5px" }}
-          >
-            <div class="row mt-3">
+          <div class="col-md-3">
+            <div
+              class="bg-light"
+              style={{ marginTop: "5px", borderRadius: "5px", padding: "20px" }}
+            >
               <h5>Submit an app</h5>
-            </div>
-            <div class="row">
               <p style={{ textAlign: "left" }}>
                 Did you build something and want to share it with the world? You
                 can submit it <a href="#">here</a>.
+              </p>
+            </div>
+            <div
+              class="bg-light"
+              style={{
+                marginTop: "25px",
+                borderRadius: "5px",
+                padding: "20px",
+              }}
+            >
+              <h5>Learn about AI</h5>
+              <p style={{ textAlign: "left" }}>
+                Curious about how the machine learning and AI which powers these
+                products. Explore more about it <a href="#">here</a>.
               </p>
             </div>
           </div>
