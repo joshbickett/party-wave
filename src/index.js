@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import Home from "./pages/Home";
+import Explore from "./pages/Explore";
 import Build from "./pages/Build";
 import Learn from "./pages/Learn";
 import reportWebVitals from "./reportWebVitals";
@@ -14,6 +15,7 @@ root.render(
     <div className="App">
       <Routes>
         <Route path="/" element={<Home />}></Route>
+        <Route path="/explore" element={<Explore />}></Route>
         <Route path="/build" element={<Build />}></Route>
         <Route path="/learn" element={<Learn />}></Route>
         <Route

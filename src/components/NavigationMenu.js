@@ -3,7 +3,7 @@ import icon from "../assets/icon.png";
 
 const NavigationMenu = ({ currentPage }) => {
   const pages = [
-    { name: "Discover", url: "/" },
+    { name: "Explore", url: "/explore" },
     { name: "Build", url: "/build" },
     { name: "Learn", url: "/learn" },
   ];
@@ -14,8 +14,8 @@ const NavigationMenu = ({ currentPage }) => {
   };
 
   return (
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
+      <a class="navbar-brand" href="/explore">
         starthere.ai
       </a>
       <button
@@ -61,7 +61,7 @@ const NavigationMenu = ({ currentPage }) => {
           <input
             class="form-control mr-sm-2"
             type="search"
-            placeholder="Search"
+            placeholder="Cool AI stuff"
             aria-label="Search"
           />
           <button class="btn btn-outline-light my-2 my-sm-0" type="submit">
