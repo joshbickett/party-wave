@@ -5,7 +5,7 @@ const NavigationMenu = ({ currentPage }) => {
   const pages = [
     { name: "Explore", url: "/explore" },
     { name: "Build", url: "/build" },
-    { name: "Learn", url: "/learn" },
+    // { name: "Learn", url: "/learn" },
   ];
 
   const onNavClick = (url) => {
@@ -13,10 +13,20 @@ const NavigationMenu = ({ currentPage }) => {
     window.location.href = window.location.origin + url;
   };
 
+  if (currentPage === "Explore") {
+    var style = {
+      backgroundColor: "#003d80",
+    };
+  } else {
+    var style = {
+      backgroundColor: "#343a40",
+    };
+  }
+
   return (
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style={style}>
       <a class="navbar-brand" href="/explore">
-        starthere.ai
+        thelibrary.ai
       </a>
       <button
         class="navbar-toggler"
@@ -69,7 +79,7 @@ const NavigationMenu = ({ currentPage }) => {
           </button>
         </form>
         <button class="btn bg-light ml-5" type="submit">
-          Submit Project
+          Submit Something
         </button>
       </div>
     </nav>
