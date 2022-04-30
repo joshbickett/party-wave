@@ -14,7 +14,7 @@ root.render(
   <BrowserRouter>
     <div className="App">
       <Routes>
-        <Route path="/" element={<Home />}></Route>
+        <Route path="/" element={<Explore />}></Route>
         <Route path="/explore" element={<Explore />}></Route>
         <Route path="/build" element={<Build />}></Route>
         <Route path="/learn" element={<Learn />}></Route>

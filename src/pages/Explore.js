@@ -87,6 +87,32 @@ const Explore = () => {
     { name: "models", description: "AI Models 🤖", short: "Models" },
   ];
 
+  const callToAction = [
+    {
+      name: "apps",
+      subject: "Submit an app",
+      description:
+        "Did you build something and want to share it with the world? You can submit it ",
+      linkText: "here",
+      url: "",
+    },
+    {
+      name: "gallery",
+      subject: "Enjoy creating art?",
+      description: "Submit you creations for others to see ",
+      linkText: "here",
+      url: "",
+    },
+    {
+      name: "models",
+      subject: "Learn about AI",
+      description:
+        "Curious about how the machine learning and AI which powers these products. Explore more about it ",
+      linkText: "here",
+      url: "",
+    },
+  ];
+
   return (
     <div className="App">
       <NavigationMenu currentPage={"Explore"} />
@@ -349,16 +375,27 @@ const Explore = () => {
             })}
           </div>
           <div class="col-md-3">
-            <div
-              class="bg-light"
-              style={{ marginTop: "5px", borderRadius: "5px", padding: "20px" }}
-            >
-              <h5>Submit an app</h5>
-              <p style={{ textAlign: "left" }}>
-                Did you build something and want to share it with the world? You
-                can submit it <a href="#">here</a>.
-              </p>
-            </div>
+            {callToAction.map((call) => {
+              if (call.name === activeTab) {
+                return (
+                  <div
+                    class="bg-light"
+                    style={{
+                      marginTop: "5px",
+                      borderRadius: "5px",
+                      padding: "20px",
+                    }}
+                  >
+                    <h5>{call.subject}</h5>
+                    <p style={{ textAlign: "left" }}>
+                      {call.description}
+                      <a href="#">{call.linkText}</a>.
+                    </p>
+                  </div>
+                );
+              }
+            })}
+
             {/* <div
               class="bg-light"
               style={{
