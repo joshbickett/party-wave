@@ -2,8 +2,20 @@ import logo from "../logo.svg";
 import "../App.css";
 import NavigationMenu from "../components/NavigationMenu";
 import Footer from "../components/Footer";
+import { useState } from "react";
 
 const Build = () => {
+  const [activeTab, setActiveTab] = useState("submit");
+
+  const tabs = [
+    {
+      name: "submit",
+      description: "Submitting an project 👾",
+      short: "Submit",
+    },
+    { name: "community", description: "The Community 👥", short: "Community" },
+  ];
+
   return (
     <div className="App">
       <NavigationMenu currentPage={"Build"} />
@@ -14,7 +26,37 @@ const Build = () => {
             <p class="text-light">
               We are looking for great apps and content to share with users
             </p>
-            <div style={{ marginTop: "100px" }}>test</div>
+            <div style={{ marginTop: "100px" }}>
+              <ul class="nav justify-content-center nav-tabs">
+                {tabs.map((tab) => {
+                  if (tab.name === activeTab) {
+                    return (
+                      <li class="nav-item">
+                        <a
+                          class="nav-link active"
+                          href="#"
+                          onClick={() => setActiveTab(tab.name)}
+                        >
+                          {tab.description}
+                        </a>
+                      </li>
+                    );
+                  } else {
+                    return (
+                      <li class="nav-item">
+                        <a
+                          class="nav-link text-white"
+                          href="#"
+                          onClick={() => setActiveTab(tab.name)}
+                        >
+                          {tab.description}
+                        </a>
+                      </li>
+                    );
+                  }
+                })}
+              </ul>
+            </div>
           </div>
         </div>
       </div>
