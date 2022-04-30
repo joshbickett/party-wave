@@ -287,6 +287,65 @@ const Explore = () => {
                 </div>
               </div>
             </div>
+            {allContent.map((content, i) => {
+              if (content.name === activeTab) {
+                return content.records.map((record) => {
+                  return (
+                    <div
+                      class="row"
+                      style={{
+                        borderRadius: "5px",
+                      }}
+                    >
+                      <div class="col-md-2" style={{ padding: "10px" }}>
+                        <img
+                          src={icon}
+                          style={{ width: "50px", height: "50px" }}
+                        />
+                      </div>
+                      <div class="col-md-6" style={{ padding: "5px" }}>
+                        <div
+                          class="row"
+                          style={{
+                            height: "20px",
+                          }}
+                        >
+                          <h6>{record.name}</h6>
+                        </div>
+                        <div class="row">
+                          <div
+                            style={{
+                              padding: "5px",
+                              fontSize: "12px",
+                              color: "#383838",
+                            }}
+                          >
+                            {record.description}
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="col-md-4"
+                        style={{
+                          padding: "5px",
+                        }}
+                      >
+                        {record.tags.map((tag) => {
+                          return (
+                            <span
+                              class="badge badge-secondary"
+                              style={{ margin: "5px" }}
+                            >
+                              {tag}
+                            </span>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  );
+                });
+              }
+            })}
             {/* {apps.map((app) => {
               return (
                 <div
