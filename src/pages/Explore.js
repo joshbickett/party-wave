@@ -130,7 +130,7 @@ const Explore = () => {
             </div>
           </div>
         </div>
-        <div
+        {/* <div
           class="row bg-light text-dark"
           style={{ backgroundColor: "#00008B", color: "white" }}
         >
@@ -141,97 +141,12 @@ const Explore = () => {
               })}
             </h1>
           </div>
-        </div>
-        <div class="row bg-light text-dark" style={{ padding: "30px 0" }}>
-          <div class="col-md-1"></div>
-          <div
-            class="col-md-3"
-            style={{ margin: "10px 0", borderRight: "1px solid gray" }}
-          >
-            <h5>
-              Top{" "}
-              {tabs.map((tab) => {
-                if (tab.name === activeTab) return tab.short;
-              })}{" "}
-              🎉
-            </h5>
-          </div>
-          <div class="col-md-6" style={{ margin: "10px" }}>
-            {allContent.map((content, i) => {
-              if (content.name === activeTab) {
-                console.log("content.name: ", content.name);
-                console.log("i: ", i);
-                console.log("activeTab: ", activeTab);
-                {
-                  return content.records.map((record) => {
-                    console.log("record: ", record);
-                    return (
-                      <div
-                        class="row"
-                        style={{
-                          borderRadius: "5px",
-                        }}
-                      >
-                        <div class="col-md-2" style={{ padding: "10px" }}>
-                          <img
-                            src={icon}
-                            style={{ width: "50px", height: "50px" }}
-                          />
-                        </div>
-                        <div class="col-md-6" style={{ padding: "5px" }}>
-                          <div
-                            class="row"
-                            style={{
-                              height: "20px",
-                            }}
-                          >
-                            <h6>{record.name}</h6>
-                          </div>
-                          <div class="row">
-                            <div
-                              style={{
-                                padding: "5px",
-                                fontSize: "12px",
-                                color: "#383838",
-                              }}
-                            >
-                              {record.description}
-                            </div>
-                          </div>
-                        </div>
-                        <div
-                          class="col-md-4"
-                          style={{
-                            padding: "5px",
-                          }}
-                        >
-                          {record.tags.map((tag) => {
-                            return (
-                              <span
-                                class="badge badge-secondary"
-                                style={{ margin: "5px" }}
-                              >
-                                {tag}
-                              </span>
-                            );
-                          })}
-                        </div>
-                      </div>
-                    );
-                  });
-                }
-              }
-            })}
-            <button type="button" class="btn btn-dark" style={{ width: "20%" }}>
-              See more
-            </button>
-          </div>
+        </div> */}
+
+        <div class="row bg-light" style={{ padding: "30px 0" }}>
           <div class="col-md-2"></div>
-        </div>
-        <div class="row mt-2 bg-white" style={{ padding: "30px 0" }}>
-          <div class="col-md-1"></div>
           <div
-            class="col-md-7 "
+            class="col-md-8"
             style={{ marginTop: "5px", borderRadius: "5px" }}
           >
             <div class="row ml-2" style={{ marginBottom: "25px" }}>
@@ -346,58 +261,6 @@ const Explore = () => {
                 });
               }
             })}
-            {/* {apps.map((app) => {
-              return (
-                <div
-                  class="row"
-                  style={{
-                    borderRadius: "5px",
-                  }}
-                >
-                  <div class="col-md-2" style={{ padding: "10px" }}>
-                    <img src={icon} style={{ width: "50px", height: "50px" }} />
-                  </div>
-                  <div class="col-md-6" style={{ padding: "5px" }}>
-                    <div
-                      class="row"
-                      style={{
-                        height: "20px",
-                      }}
-                    >
-                      <h6>{app.name}</h6>
-                    </div>
-                    <div class="row">
-                      <div
-                        style={{
-                          padding: "5px",
-                          fontSize: "12px",
-                          color: "#383838",
-                        }}
-                      >
-                        {app.description}
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="col-md-4"
-                    style={{
-                      padding: "5px",
-                    }}
-                  >
-                    {app.tags.map((tag) => {
-                      return (
-                        <span
-                          class="badge badge-secondary"
-                          style={{ margin: "5px" }}
-                        >
-                          {tag}
-                        </span>
-                      );
-                    })}
-                  </div>
-                </div>
-              );
-            })} */}
             <button
               type="button"
               class="btn btn-dark"
@@ -405,6 +268,85 @@ const Explore = () => {
             >
               See more
             </button>
+          </div>
+          <div class="col-md-2"></div>
+        </div>
+        <div class="row bg-white text-dark" style={{ padding: "30px 0" }}>
+          <div
+            class="col-md-2"
+            style={{ margin: "10px 0", borderRight: "1px solid gray" }}
+          >
+            <h5>
+              Top{" "}
+              {tabs.map((tab) => {
+                if (tab.name === activeTab) return tab.short;
+              })}{" "}
+              🎉
+            </h5>
+          </div>
+          <div class="col-md-6" style={{ margin: "10px" }}>
+            {allContent.map((content, i) => {
+              if (content.name === activeTab) {
+                {
+                  return content.records.map((record) => {
+                    console.log("record: ", record);
+                    return (
+                      <div
+                        class="row"
+                        style={{
+                          borderRadius: "5px",
+                        }}
+                      >
+                        <div class="col-md-2" style={{ padding: "10px" }}>
+                          <img
+                            src={icon}
+                            style={{ width: "50px", height: "50px" }}
+                          />
+                        </div>
+                        <div class="col-md-6" style={{ padding: "5px" }}>
+                          <div
+                            class="row"
+                            style={{
+                              height: "20px",
+                            }}
+                          >
+                            <h6>{record.name}</h6>
+                          </div>
+                          <div class="row">
+                            <div
+                              style={{
+                                padding: "5px",
+                                fontSize: "12px",
+                                color: "#383838",
+                              }}
+                            >
+                              {record.description}
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="col-md-4"
+                          style={{
+                            padding: "5px",
+                          }}
+                        >
+                          {record.tags.map((tag) => {
+                            return (
+                              <span
+                                class="badge badge-secondary"
+                                style={{ margin: "5px" }}
+                              >
+                                {tag}
+                              </span>
+                            );
+                          })}
+                        </div>
+                      </div>
+                    );
+                  });
+                }
+              }
+            })}
           </div>
           <div class="col-md-3">
             <div
@@ -417,7 +359,7 @@ const Explore = () => {
                 can submit it <a href="#">here</a>.
               </p>
             </div>
-            <div
+            {/* <div
               class="bg-light"
               style={{
                 marginTop: "25px",
@@ -430,9 +372,8 @@ const Explore = () => {
                 Curious about how the machine learning and AI which powers these
                 products. Explore more about it <a href="#">here</a>.
               </p>
-            </div>
+            </div> */}
           </div>
-          <div class="col-md-1"></div>
         </div>
       </div>
       <Footer />
