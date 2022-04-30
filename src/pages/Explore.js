@@ -91,7 +91,7 @@ const Explore = () => {
     <div className="App">
       <NavigationMenu currentPage={"Explore"} />
       <div class="container-fluid">
-        <div class="row bg-dark text-white">
+        <div class="row text-white" style={{ backgroundColor: "#0062cc" }}>
           <div class="col-md-12" style={{ margin: "200px 0 0 0" }}>
             <h1 class="text-light">
               Explore AI tools, projects, and creations
