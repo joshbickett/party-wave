@@ -82,7 +82,7 @@ const Explore = () => {
   const [activeTab, setActiveTab] = useState("apps");
 
   const tabs = [
-    { name: "apps", description: "Apps and tools 💻", short: "Apps" },
+    { name: "apps", description: "Apps 💻", short: "Apps" },
     { name: "gallery", description: "Gallery 🖼", short: "Creations" },
     { name: "models", description: "AI Models 🤖", short: "Models" },
   ];
@@ -228,65 +228,65 @@ const Explore = () => {
                 </div>
               </div>
             </div>
-            {allContent.map((content, i) => {
-              if (content.name === activeTab) {
-                return content.records.map((record) => {
-                  return (
-                    <div
-                      class="row"
-                      style={{
-                        borderRadius: "5px",
-                      }}
-                    >
-                      <div class="col-md-2" style={{ padding: "10px" }}>
-                        <img
-                          src={icon}
-                          style={{ width: "50px", height: "50px" }}
-                        />
-                      </div>
-                      <div class="col-md-6" style={{ padding: "5px" }}>
+            <div class="row">
+              <div class="col-md-1"></div>
+              <div class="col-md-12">
+                {allContent.map((content, i) => {
+                  if (content.name === activeTab) {
+                    return content.records.map((record) => {
+                      return (
                         <div
                           class="row"
                           style={{
-                            height: "20px",
+                            borderRadius: "5px",
+                            padding: "5px",
                           }}
                         >
-                          <h6>{record.name}</h6>
-                        </div>
-                        <div class="row">
+                          <img
+                            src={icon}
+                            style={{
+                              width: "50px",
+                              height: "50px",
+                            }}
+                          />
                           <div
                             style={{
-                              padding: "5px",
-                              fontSize: "12px",
-                              color: "#383838",
+                              width: "60%",
+                              textAlign: "left",
+                              marginLeft: "15px",
                             }}
                           >
-                            {record.description}
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        class="col-md-4"
-                        style={{
-                          padding: "5px",
-                        }}
-                      >
-                        {record.tags.map((tag) => {
-                          return (
-                            <span
-                              class="badge badge-secondary"
-                              style={{ margin: "5px" }}
+                            <h6>{record.name}</h6>
+                            <p
+                              style={{
+                                marginLeft: "5px",
+                                fontSize: "12px",
+                                color: "#383838",
+                              }}
                             >
-                              {tag}
-                            </span>
-                          );
-                        })}
-                      </div>
-                    </div>
-                  );
-                });
-              }
-            })}
+                              {record.description}
+                            </p>
+                          </div>
+
+                          {record.tags.map((tag) => {
+                            return (
+                              <span
+                                class="badge badge-secondary"
+                                style={{ margin: "5px" }}
+                              >
+                                {tag}
+                              </span>
+                            );
+                          })}
+                        </div>
+                      );
+                    });
+                  }
+                })}
+              </div>
+              <div class="col-md-1"></div>
+            </div>
+
             <button
               type="button"
               class="btn btn-dark"
@@ -321,52 +321,45 @@ const Explore = () => {
                         class="row"
                         style={{
                           borderRadius: "5px",
+                          padding: "5px",
                         }}
                       >
-                        <div class="col-md-2" style={{ padding: "10px" }}>
-                          <img
-                            src={icon}
-                            style={{ width: "50px", height: "50px" }}
-                          />
-                        </div>
-                        <div class="col-md-6" style={{ padding: "5px" }}>
-                          <div
-                            class="row"
-                            style={{
-                              height: "20px",
-                            }}
-                          >
-                            <h6>{record.name}</h6>
-                          </div>
-                          <div class="row">
-                            <div
-                              style={{
-                                padding: "5px",
-                                fontSize: "12px",
-                                color: "#383838",
-                              }}
-                            >
-                              {record.description}
-                            </div>
-                          </div>
-                        </div>
-                        <div
-                          class="col-md-4"
+                        <img
+                          src={icon}
                           style={{
-                            padding: "5px",
+                            width: "50px",
+                            height: "50px",
+                          }}
+                        />
+                        <div
+                          style={{
+                            width: "60%",
+                            textAlign: "left",
+                            marginLeft: "15px",
                           }}
                         >
-                          {record.tags.map((tag) => {
-                            return (
-                              <span
-                                class="badge badge-secondary"
-                                style={{ margin: "5px" }}
-                              >
-                                {tag}
-                              </span>
-                            );
-                          })}
+                          <h6>{record.name}</h6>
+                          <p
+                            style={{
+                              marginLeft: "5px",
+                              fontSize: "12px",
+                              color: "#383838",
+                            }}
+                          >
+                            {record.description}
+                          </p>
                         </div>
+
+                        {record.tags.map((tag) => {
+                          return (
+                            <span
+                              class="badge badge-secondary"
+                              style={{ margin: "5px" }}
+                            >
+                              {tag}
+                            </span>
+                          );
+                        })}
                       </div>
                     );
                   });
