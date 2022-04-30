@@ -251,7 +251,7 @@ const Explore = () => {
                           />
                           <div
                             style={{
-                              width: "60%",
+                              width: "55%",
                               textAlign: "left",
                               marginLeft: "15px",
                             }}
@@ -333,7 +333,7 @@ const Explore = () => {
                         />
                         <div
                           style={{
-                            width: "60%",
+                            width: "55%",
                             textAlign: "left",
                             marginLeft: "15px",
                           }}
