@@ -10,7 +10,7 @@ const Build = () => {
   const tabs = [
     {
       name: "submit",
-      description: "Submitting an project 👾",
+      description: "Submit a project 👾",
       short: "Submit",
     },
     { name: "community", description: "The Community 👥", short: "Community" },
