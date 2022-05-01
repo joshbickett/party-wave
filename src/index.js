@@ -4,6 +4,7 @@ import "./index.css";
 import Home from "./pages/Home";
 import Explore from "./pages/Explore";
 import Build from "./pages/Build";
+import Submit from "./pages/Submit";
 import Learn from "./pages/Learn";
 import reportWebVitals from "./reportWebVitals";
 
@@ -16,6 +17,7 @@ root.render(
       <Routes>
         <Route path="/" element={<Explore />}></Route>
         <Route path="/explore" element={<Explore />}></Route>
+        <Route path="/submit" element={<Submit />}></Route>
         <Route path="/build" element={<Build />}></Route>
         <Route path="/learn" element={<Learn />}></Route>
         <Route

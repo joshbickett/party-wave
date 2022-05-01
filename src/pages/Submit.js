@@ -1,31 +1,38 @@
-import logo from "../logo.svg";
 import NavigationMenu from "../components/NavigationMenu";
 import Footer from "../components/Footer";
 import { useState } from "react";
 
-const Build = () => {
-  const [activeTab, setActiveTab] = useState("submit");
+const Submit = () => {
+  const [activeTab, setActiveTab] = useState("app");
 
   const tabs = [
     {
-      name: "submit",
-      description: "Submit a project 👾",
-      short: "Submit",
+      name: "app",
+      description: "Software project or app 👾",
     },
-    { name: "community", description: "The Community 👥", short: "Community" },
+    {
+      name: "digital content",
+      description: "Digital content and art 🎨",
+    },
+    {
+      name: "model",
+      description: "AI model 🤖",
+    },
   ];
 
   return (
-    <div>
-      <NavigationMenu currentPage={"Build"} />
+    <div className="App">
+      <NavigationMenu currentPage={"Submit"} />
       <div class="container-fluid">
-        <div class="row text-white" style={{ backgroundColor: "#57606a" }}>
+        <div class="row text-white" style={{ backgroundColor: "#6610f2" }}>
           <div class="col-md-12" style={{ margin: "200px 0 0 0" }}>
-            <h1 class="text-light">Share your creations with the world</h1>
+            <h1 class="text-light">Submit your creation</h1>
             <p class="text-light">
-              We are looking for great apps and content to share with users
+              You can post your AI content such as apps, small side projects,
+              pieces of art, or AI model.
             </p>
             <div style={{ marginTop: "100px" }}>
+              <h5 style={{ padding: "10px" }}>Select type of submission</h5>
               <ul class="nav justify-content-center nav-tabs">
                 {tabs.map((tab) => {
                   if (tab.name === activeTab) {
@@ -64,4 +71,4 @@ const Build = () => {
   );
 };
 
-export default Build;
+export default Submit;

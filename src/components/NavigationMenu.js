@@ -17,9 +17,13 @@ const NavigationMenu = ({ currentPage }) => {
     var style = {
       backgroundColor: "#003d80",
     };
-  } else {
+  } else if (currentPage === "Build") {
     var style = {
       backgroundColor: "#343a40",
+    };
+  } else {
+    var style = {
+      backgroundColor: "#3d0a91",
     };
   }
 
@@ -84,7 +88,13 @@ const NavigationMenu = ({ currentPage }) => {
             </button>
           </div>
         </form>
-        <button class="btn bg-light" type="submit">
+        <button
+          class="btn bg-light"
+          type="submit"
+          onClick={() => {
+            window.location.href = "/submit";
+          }}
+        >
           Submit Something
         </button>
       </div>
