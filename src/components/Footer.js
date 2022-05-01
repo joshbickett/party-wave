@@ -10,15 +10,15 @@ const Footer = () => {
   return (
     <div class="container" style={{ marginTop: "50px" }}>
       <div class="row">
-        <div class="col-12 col-md">
-          <small class="d-block mb-3 text-muted">some company © 2022</small>
+        <div class="col-sm-3 col-md">
+          {/* <small class="d-block mb-3 text-muted">some company © 2022</small> */}
         </div>
-        <div class="col-6 col-md">
-          <h5>Features</h5>
+        <div class="col-md-3 col-md">
+          <h5>Page</h5>
           <ul class="list-unstyled text-small">
             <li>
-              <a class="text-muted" href="/">
-                Discover
+              <a class="text-muted" href="/explore">
+                Explore
               </a>
             </li>
             <li>
@@ -26,44 +26,44 @@ const Footer = () => {
                 Build
               </a>
             </li>
-            <li>
+            {/* <li>
               <a class="text-muted" href="/learn">
                 Learn
               </a>
-            </li>
+            </li> */}
           </ul>
         </div>
-        <div class="col-6 col-md">
+        <div class="col-md-3 col-md">
           <h5>About</h5>
           <ul class="list-unstyled text-small">
-            <li>
+            <p class="text-muted">A place for AI engineers to share projects</p>
+            {/* <li>
               <a class="text-muted" href="#">
                 Team
               </a>
-            </li>
-            <li>
+            </li> */}
+            {/* <li>
               <a class="text-muted" href="#">
                 Privacy
               </a>
-            </li>
-            <li>
+            </li> */}
+            {/* <li>
               <a class="text-muted" href="#">
                 Terms
               </a>
-            </li>
+            </li> */}
           </ul>
         </div>
-        <div class="col-6 col-md">
-          <h5>Resources</h5>
+        <div class="col-md-3 col-md">
+          {/* <h5>Resources</h5>
           <ul class="list-unstyled text-small">
             <li>
               <a class="text-muted" href="#">
                 More cool stuff
               </a>
             </li>
-          </ul>
+          </ul> */}
         </div>
-        <div class="col-6 col-md"></div>
       </div>
     </div>
   );
