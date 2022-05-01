@@ -67,18 +67,24 @@ const NavigationMenu = ({ currentPage }) => {
           })}
         </ul>
 
-        <form class="form-inline my-2 my-lg-0 ">
+        <form class="form-inline my-2 my-lg-0">
           <input
             class="form-control mr-sm-2"
             type="search"
             placeholder="Cool AI stuff"
             aria-label="Search"
           />
-          <button class="btn btn-outline-light my-2 my-sm-0" type="submit">
-            Search 🔍
-          </button>
+          <div style={{ margin: "0 auto" }}>
+            <button
+              class="btn btn-outline-light my-2 my-sm-0"
+              type="submit"
+              style={{ margin: "0 20px 0 0" }}
+            >
+              Search 🔍
+            </button>
+          </div>
         </form>
-        <button class="btn bg-light ml-5" type="submit">
+        <button class="btn bg-light" type="submit">
           Submit Something
         </button>
       </div>
