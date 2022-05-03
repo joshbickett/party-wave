@@ -95,7 +95,7 @@ const NavigationMenu = ({ currentPage }) => {
             window.location.href = "/submit";
           }}
         >
-          Submit Something
+          Submit
         </button>
       </div>
     </nav>
