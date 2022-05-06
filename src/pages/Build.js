@@ -12,7 +12,7 @@ const Build = () => {
       description: "Submit a project 👾",
       short: "Submit",
     },
-    { name: "community", description: "The Community 👥", short: "Community" },
+    // { name: "community", description: "The Community 👥", short: "Community" },
   ];
 
   return (
@@ -21,9 +21,9 @@ const Build = () => {
       <div class="container-fluid">
         <div class="row text-white" style={{ backgroundColor: "#57606a" }}>
           <div class="col-md-12" style={{ margin: "200px 0 0 0" }}>
-            <h1 class="text-light">Share your creations with the world</h1>
+            <h1 class="text-light">Share your creation</h1>
             <p class="text-light">
-              We are looking for great apps and content to share with users
+              Post apps and content for it to get discovered
             </p>
             <div style={{ marginTop: "100px" }}>
               <ul class="nav justify-content-center nav-tabs">
@@ -55,6 +55,68 @@ const Build = () => {
                   }
                 })}
               </ul>
+            </div>
+          </div>
+        </div>
+        <div class="row bg-light">
+          <div
+            class="col-md-4"
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              marginTop: "10px",
+            }}
+          >
+            <div class="card bg-light mb-3" style={{ maxWidth: "18rem" }}>
+              <div class="card-header">Header</div>
+              <div class="card-body">
+                <h5 class="card-title">Light card title</h5>
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-md-4"
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              marginTop: "10px",
+            }}
+          >
+            <div class="card bg-light mb-3" style={{ maxWidth: "18rem" }}>
+              <div class="card-header">Header</div>
+              <div class="card-body">
+                <h5 class="card-title">Light card title</h5>
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-md-4"
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              marginTop: "10px",
+            }}
+          >
+            <div class="card bg-light mb-3" style={{ maxWidth: "18rem" }}>
+              <div class="card-header">Header</div>
+              <div class="card-body">
+                <h5 class="card-title">Light card title</h5>
+                <p class="card-text">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+              </div>
             </div>
           </div>
         </div>

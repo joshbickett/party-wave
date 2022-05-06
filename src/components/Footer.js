@@ -36,7 +36,7 @@ const Footer = () => {
         <div class="col-md-3 col-md">
           <h5>About</h5>
           <ul class="list-unstyled text-small">
-            <p class="text-muted">A place for AI engineers to share projects</p>
+            <p class="text-muted">A place for AI projects</p>
             {/* <li>
               <a class="text-muted" href="#">
                 Team

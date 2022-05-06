@@ -4,7 +4,7 @@ import icon from "../assets/icon.png";
 const NavigationMenu = ({ currentPage }) => {
   const pages = [
     { name: "Explore", url: "/explore" },
-    { name: "Build", url: "/build" },
+    // { name: "Build", url: "/build" },
     // { name: "Learn", url: "/learn" },
   ];
 
