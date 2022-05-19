@@ -110,145 +110,114 @@ const Explore = () => {
           </div>
         </div>
 
-        <div class="row bg-white mt-5">
-          <div class="col-md-3">
-            <h3
-              class="p-3 border-bottom"
+        <div class="row mt-5">
+          <div class="col-md-1"></div>
+          <div class="col-md-2">
+            <div
+              class="border-bottom"
               style={{
-                width: "90%",
-                marginLeft: "10px",
-                marginBottom: "10px",
+                textAlign: "left",
+                fontSize: "20px",
+                fontWeight: "bold",
               }}
             >
               Explore by
-            </h3>
-            <div
-              class="row ml-2"
-              style={{
-                marginBottom: "25px",
-                margin: "5px auto",
-              }}
-            >
-              <div class="col-md-12 pl-5 pr-5">
-                <h5
-                  class="mt-3"
-                  style={{ width: "50%", display: "inline-block" }}
-                >
-                  Timeline
-                </h5>
-                <div
-                  class="dropdown"
-                  style={{ width: "50%", display: "inline-block" }}
-                >
-                  <button
-                    class="btn btn-secondary dropdown-toggle"
-                    type="button"
-                    id="dropdownMenuButton"
-                    data-toggle="dropdown"
-                    aria-haspopup="true"
-                    aria-expanded="false"
-                  >
-                    Week
-                  </button>
-                  <div
-                    class="dropdown-menu"
-                    aria-labelledby="dropdownMenuButton"
-                  >
-                    <a class="dropdown-item" href="#">
-                      Week
-                    </a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">
-                      Month
-                    </a>
-                    <a class="dropdown-item" href="#">
-                      Year
-                    </a>
-                  </div>
-                </div>
-              </div>
             </div>
             <div
-              class="row ml-2"
               style={{
-                marginBottom: "25px",
-                margin: "5px auto",
+                textAlign: "left",
+                fontSize: "20px",
+                margin: "10px 0",
               }}
             >
-              <div class="col-md-12 pl-5 pr-5 mt-3">
-                <h5 style={{ width: "50%", display: "inline-block" }}>
-                  Category
-                </h5>
-                <div
-                  class="dropdown"
-                  style={{ width: "50%", display: "inline-block" }}
-                >
-                  <button
-                    class="btn btn-secondary dropdown-toggle"
-                    type="button"
-                    id="dropdownMenuButton"
-                    data-toggle="dropdown"
-                    aria-haspopup="true"
-                    aria-expanded="false"
-                  >
-                    All
-                  </button>
-                  <div
-                    class="dropdown-menu"
-                    aria-labelledby="dropdownMenuButton"
-                  >
-                    <a class="dropdown-item" href="#">
-                      All
-                    </a>
-                    <a class="dropdown-item" href="#">
-                      NLP
-                    </a>
-                    <a class="dropdown-item" href="#">
-                      Vision
-                    </a>
-                    <a class="dropdown-item" href="#">
-                      Other
-                    </a>
-                  </div>
-                </div>
-              </div>
+              What's new
+            </div>
+            <div
+              style={{
+                textAlign: "left",
+                fontSize: "20px",
+                margin: "10px 0",
+              }}
+            >
+              Popular
             </div>
           </div>
+
           <div class="col-md-6 border-left">
             <div class="row">
-              <div class="col-md-1"></div>
-              <div class="col-md-12" style={{ padding: "0px" }}>
+              <div class="col-md-12" style={{ padding: "0 20px" }}>
+                <div
+                  style={{
+                    width: "100%",
+                    display: "flex",
+                    alignItems: "center",
+                  }}
+                >
+                  <div
+                    style={{
+                      margin: "0 10px",
+                      fontSize: "30px",
+                    }}
+                  >
+                    What's new this
+                  </div>
+                  <div class="dropdown" style={{ margin: "0 10px" }}>
+                    <button
+                      class="btn btn-secondary dropdown-toggle"
+                      type="button"
+                      id="dropdownMenuButton"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                      style={{ fontSize: "25px" }}
+                    >
+                      Week
+                    </button>
+                    <div
+                      class="dropdown-menu"
+                      aria-labelledby="dropdownMenuButton"
+                    >
+                      <a class="dropdown-item" href="#">
+                        Week
+                      </a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#">
+                        Month
+                      </a>
+                    </div>
+                  </div>
+                </div>
                 {content.map((record) => {
                   return (
                     <AppCard
                       style={{
                         display: "grid",
-                        gridTemplateColumns: "1fr 5fr 2fr 2fr",
+                        gridTemplateColumns: "2fr 6fr 3fr 2fr 1fr",
                         gridGap: "5px",
-                        border: "1px solid black",
                       }}
                     >
-                      <div style={{ border: "1px solid black" }}>
+                      <div
+                        style={{
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                        }}
+                      >
                         <img
                           src={icon}
                           style={{
                             width: "60px",
                             height: "60px",
                             borderRadius: "5px",
-                            margin: "0 10px",
-                            display: "flex",
-                            alignItems: "center",
-                            justifyContent: "center",
+                            margin: "0 15px",
                           }}
                         />
                       </div>
 
-                      <div
-                        style={{ border: "1px solid black", textAlign: "left" }}
-                      >
+                      <div style={{ textAlign: "left" }}>
                         <p
                           style={{
-                            fontSize: "15px",
+                            fontSize: "20px",
                             margin: "0px",
                             fontWeight: "bold",
                           }}
@@ -258,7 +227,7 @@ const Explore = () => {
                         <p
                           class="text-secondary"
                           style={{
-                            fontSize: "15px",
+                            fontSize: "20px",
                             color: "#383838",
                           }}
                         >
@@ -267,7 +236,6 @@ const Explore = () => {
                       </div>
                       <div
                         style={{
-                          border: "1px solid black",
                           display: "flex",
                           alignItems: "center",
                           justifyContent: "center",
@@ -282,7 +250,6 @@ const Explore = () => {
                       </div>
                       <div
                         style={{
-                          border: "1px solid black",
                           display: "flex",
                           alignItems: "center",
                           justifyContent: "center",
@@ -296,94 +263,21 @@ const Explore = () => {
                             fontSize: "20px",
                           }}
                         >
-                          {record[5]}🧠
+                          {record[5]} 🧠
                         </span>
+                      </div>
+                      <div
+                        style={{
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                        }}
+                      >
+                        <VoteButton>⬆️</VoteButton>
                       </div>
                     </AppCard>
                   );
                 })}
-                {/* {contents.map((content, i) => {
-                  if (content.name === activeTab) {
-                    return content.records.map((record) => {
-                      return (
-                        <div
-                          class="row"
-                          style={{
-                            borderRadius: "5px",
-                            margin: "20px 0",
-                          }}
-                        >
-                          <div class="col-md-2">
-                            <img
-                              src={icon}
-                              style={{
-                                width: "60px",
-                                height: "60px",
-                                borderRadius: "5px",
-                              }}
-                            />
-                          </div>
-                          <div
-                            class="col-md-6"
-                            style={{ textAlign: "left", padding: "0px" }}
-                          >
-                            <div
-                              style={{
-                                width: "100%",
-                              }}
-                            >
-                              <p
-                                style={{
-                                  fontSize: "15px",
-                                  margin: "0px",
-                                  fontWeight: "bold",
-                                }}
-                              >
-                                {record.name}
-                              </p>
-                              <p
-                                class="text-secondary"
-                                style={{
-                                  fontSize: "15px",
-                                  color: "#383838",
-                                }}
-                              >
-                                {record.description}
-                              </p>
-                            </div>
-                          </div>
-                          <div class="col-md-2">
-                            {record.tags.map((tag) => {
-                              return (
-                                <span
-                                  class="badge badge-secondary"
-                                  style={{ margin: "1px" }}
-                                >
-                                  {tag}
-                                </span>
-                              );
-                            })}
-                          </div>
-                          <div class="col-md-2">
-                            <span
-                              class="badge badge-light"
-                              style={{
-                                paddingTop: "15px",
-                                height: "50px",
-                                fontSize: "20px",
-                              }}
-                            >
-                              {record.votes}{" "}
-                              {content.name === "apps" && <>🧠</>}
-                              {content.name === "gallery" && <>🖼</>}
-                              {content.name === "models" && <>🤖</>}
-                            </span>
-                          </div>
-                        </div>
-                      );
-                    });
-                  }
-                })} */}
               </div>
               <div class="col-md-1"></div>
             </div>
@@ -435,7 +329,19 @@ const AppContainer = styled.div`
 const AppCard = styled.div`
   border-radius: 5px;
   margin: 15px 5px;
-
   box-shadow: 1px 3px 5px #dbdbdb;
   padding: 5px 0;
+  &:hover {
+    box-shadow: 1px 3px 10px #dbdbdb;
+  }
+`;
+
+const VoteButton = styled.div`
+  font-size: 20px;
+  &:hover {
+    font-size: 30px;
+  }
+  &:active {
+    font-size: 50px;
+  }
 `;
