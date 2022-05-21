@@ -122,7 +122,7 @@ const Explore = () => {
                 fontWeight: "bold",
               }}
             >
-              Explore by
+              Explore By
             </div>
             <div
               style={{
