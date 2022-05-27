@@ -1,26 +1,28 @@
 import NavigationMenu from "../components/NavigationMenu";
 import Footer from "../components/Footer";
 import { useState } from "react";
+import { submit } from "../apis/FlaskAPI";
 
 const Submit = () => {
   const [activeTab, setActiveTab] = useState("app");
+  const [record, setRecord] = useState({});
 
   const tabs = [
     {
       name: "app",
-      description: "Software project or app 👾",
-      long: "app or project",
+      description: "Software project 👾",
+      long: "project",
     },
-    {
-      name: "digital content",
-      description: "Digital content and art 🎨",
-      short: "Digital content",
-    },
-    {
-      name: "model",
-      description: "AI model 🤖",
-      short: "Model",
-    },
+    // {
+    //   name: "digital content",
+    //   description: "Digital content and art 🎨",
+    //   short: "Digital content",
+    // },
+    // {
+    //   name: "model",
+    //   description: "AI model 🤖",
+    //   short: "Model",
+    // },
   ];
 
   const appCategories = [
@@ -36,20 +38,27 @@ const Submit = () => {
     "Commerce",
   ];
 
+  const submitProject = () => {
+    console.log("record:", record);
+    if (record.name && record.description) {
+      console.log("submitted!");
+      submit({ test: "test" });
+    }
+  };
+
   return (
     <div className="App">
       <NavigationMenu currentPage={"Submit"} />
       <div class="container-fluid">
         <div class="row text-white" style={{ backgroundColor: "#6610f2" }}>
-          <div class="col-md-12" style={{ margin: "200px 0 0 0" }}>
+          <div class="col-md-12" style={{ margin: "170px 0 0 0" }}>
             <h1 class="text-light">Submit your creation</h1>
             <p class="text-light">
-              You can post your AI content such as apps, small side projects,
-              pieces of art, or AI model.
+              You can post your AI content such as apps or small side projects.
             </p>
             <div style={{ marginTop: "100px" }}>
-              <h5 style={{ padding: "10px" }}>Select type of submission</h5>
-              <ul class="nav justify-content-center nav-tabs">
+              {/* <h5 style={{ padding: "10px" }}>Type of submission</h5> */}
+              {/* <ul class="nav justify-content-center nav-tabs">
                 {tabs.map((tab) => {
                   if (tab.name === activeTab) {
                     return (
@@ -77,7 +86,7 @@ const Submit = () => {
                     );
                   }
                 })}
-              </ul>
+              </ul> */}
             </div>
           </div>
         </div>
@@ -93,7 +102,7 @@ const Submit = () => {
                     return (
                       <div>
                         <h1 style={{ textAlign: "left", margin: "15px 0" }}>
-                          Share more about the {tab.name}
+                          Share more about the project
                         </h1>
                         <p style={{ textAlign: "left" }} class="text-secondary">
                           Add information for users to discover your creation
@@ -108,6 +117,11 @@ const Submit = () => {
                               class="form-control"
                               aria-describedby="name"
                               placeholder="Enter the name here"
+                              onChange={(e) => {
+                                setRecord({ ...record, name: e.target.value });
+                              }}
+                              value={record.name}
+                              required
                             />
                           </div>
                           <div
@@ -132,6 +146,11 @@ const Submit = () => {
                               maxlength="50"
                               aria-describedby="category"
                               placeholder="Something simple and to the point"
+                              onChange={(e) => {
+                                setRecord({ ...record, short: e.target.value });
+                              }}
+                              value={record.short}
+                              required
                             />
                           </div>
                           <div class="form-group">
@@ -143,6 +162,14 @@ const Submit = () => {
                               class="form-control"
                               aria-describedby="category"
                               placeholder="Let us know what category you think fits best"
+                              onChange={(e) => {
+                                setRecord({
+                                  ...record,
+                                  category: e.target.value,
+                                });
+                              }}
+                              value={record.category}
+                              required
                             />
                           </div>
                           <div class="form-group">
@@ -151,8 +178,16 @@ const Submit = () => {
                             </label>
                             <textarea
                               class="form-control"
-                              placeholder="Share more detail about the app or project here"
+                              placeholder="Share more detail about the project here"
                               rows="3"
+                              required
+                              onChange={(e) => {
+                                setRecord({
+                                  ...record,
+                                  description: e.target.value,
+                                });
+                              }}
+                              value={record.description}
                             ></textarea>
                           </div>
                           <div
@@ -176,17 +211,29 @@ const Submit = () => {
                               class="form-control"
                               aria-describedby="category"
                               placeholder="https://example.com"
+                              onChange={(e) => {
+                                setRecord({ ...record, link: e.target.value });
+                              }}
+                              value={record.link}
+                              required
                             />
                           </div>
                           <div class="form-group">
                             <label for="website" style={{ float: "left" }}>
-                              Twitter account for the product
+                              Twitter account for the product (optional)
                             </label>
                             <input
                               type="text"
                               class="form-control"
                               aria-describedby="website"
                               placeholder="@example"
+                              onChange={(e) => {
+                                setRecord({
+                                  ...record,
+                                  twitterCompany: e.target.value,
+                                });
+                              }}
+                              value={record.twitterCompany}
                             />
                           </div>
                           <div
@@ -205,7 +252,7 @@ const Submit = () => {
                             style={{ textAlign: "left" }}
                             class="text-secondary"
                           >
-                            The previews will help users get an idea of what the
+                            The previews will help users get an idea of what the{" "}
                             {tab.long} is like.
                           </p>
                           <div class="custom-file">
@@ -241,26 +288,41 @@ const Submit = () => {
                             style={{ textAlign: "left" }}
                             class="text-secondary"
                           >
-                            If you're interested, share more the motivation
-                            behind the project. Are you looking for
-                            collaborators? Is it just for fun? Now is your
-                            chance to expand upon the foundation of the project.
+                            Share more the motivation behind the project. Are
+                            you looking for collaborators? Is it just for fun?
+                            Now is your chance to expand upon the foundation of
+                            the project.
                           </p>
                           <div class="form-group">
                             <textarea
                               class="form-control"
                               placeholder="Share more detail about the app or project here"
                               rows="3"
+                              onChange={(e) => {
+                                setRecord({
+                                  ...record,
+                                  team: e.target.value,
+                                });
+                              }}
+                              value={record.motivation}
+                              required
                             ></textarea>
                           </div>
                           <div class="form-group">
                             <label for="category" style={{ float: "left" }}>
-                              Twitter account
+                              Twitter account (optional)
                             </label>
                             <input
                               type="text"
                               class="form-control"
                               aria-describedby="category"
+                              onChange={(e) => {
+                                setRecord({
+                                  ...record,
+                                  twitter: e.target.value,
+                                });
+                              }}
+                              value={record.twitter}
                               placeholder="@me"
                             />
                           </div>
@@ -269,6 +331,9 @@ const Submit = () => {
                             type="submit"
                             class="btn btn-dark mb-3"
                             style={{ width: "50%", marginTop: "25px" }}
+                            onClick={() => {
+                              submitProject();
+                            }}
                           >
                             SUBMIT
                           </button>

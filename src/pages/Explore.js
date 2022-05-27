@@ -20,14 +20,14 @@ const Explore = () => {
 
   const tabs = [
     { name: "apps", description: "Apps and projects 💻", short: "Apps" },
-    { name: "gallery", description: "Gallery 🖼", short: "Creations" },
+    // { name: "gallery", description: "Gallery 🖼", short: "Creations" },
     // { name: "models", description: "AI Models 🤖", short: "Models" },
   ];
 
   const callToAction = [
     {
       name: "apps",
-      subject: "Submit an app",
+      subject: "Submit a project",
       description:
         "Did you build something and want to share it with the world? You can submit it ",
       urlText: "here",
@@ -55,7 +55,7 @@ const Explore = () => {
       <NavigationMenu currentPage={"Explore"} />
       <div class="container-fluid">
         <div class="row text-white" style={{ backgroundColor: "#0062cc" }}>
-          <div class="col-sm-12" style={{ margin: "200px 0 0 0" }}>
+          <div class="col-sm-12" style={{ margin: "175px 0 0 0" }}>
             <div class="row">
               <div class="col-sm-12">
                 <h1 class="text-light">
@@ -72,13 +72,14 @@ const Explore = () => {
                     type="search"
                     placeholder="Search..."
                     aria-label="Search"
+                    style={{ fontSize: "20px" }}
                   />
                 </form>
               </div>
             </div>
 
             <div style={{ marginTop: "100px" }}>
-              <ul class="nav justify-content-center nav-tabs">
+              {/* <ul class="nav justify-content-center nav-tabs">
                 {tabs.map((tab) => {
                   if (tab.name === activeTab) {
                     return (
@@ -106,7 +107,7 @@ const Explore = () => {
                     );
                   }
                 })}
-              </ul>
+              </ul> */}
             </div>
           </div>
         </div>
@@ -162,7 +163,7 @@ const Explore = () => {
                     <div
                       style={{
                         margin: "0 10px",
-                        fontSize: "30px",
+                        fontSize: "25px",
                       }}
                     >
                       What's new this
@@ -175,7 +176,7 @@ const Explore = () => {
                         data-toggle="dropdown"
                         aria-haspopup="true"
                         aria-expanded="false"
-                        style={{ fontSize: "25px" }}
+                        style={{ fontSize: "20px" }}
                       >
                         Week
                       </button>
@@ -205,7 +206,7 @@ const Explore = () => {
                     <div
                       style={{
                         margin: "0 10px",
-                        fontSize: "30px",
+                        fontSize: "25px",
                       }}
                     >
                       Popular by category
@@ -218,7 +219,7 @@ const Explore = () => {
                         data-toggle="dropdown"
                         aria-haspopup="true"
                         aria-expanded="false"
-                        style={{ fontSize: "25px" }}
+                        style={{ fontSize: "20px" }}
                       >
                         All
                       </button>

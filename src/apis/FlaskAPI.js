@@ -18,3 +18,24 @@ export const getContent = async () => {
   );
   return result;
 };
+
+export const submit = async (record) => {
+  var formdata = new FormData();
+  formdata.append("record", record);
+
+  var request = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Private-Network": "true",
+      body: formdata,
+      Accept: "application/json",
+    },
+  };
+
+  const result = await fetch("http://127.0.0.1:5000/submit", request).then(
+    (response) => response.json()
+  );
+  return result;
+};
