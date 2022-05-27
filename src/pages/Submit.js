@@ -40,9 +40,16 @@ const Submit = () => {
 
   const submitProject = () => {
     console.log("record:", record);
-    if (record.name && record.description) {
+    if (
+      record.name &&
+      record.description &&
+      record.category &&
+      record.url &&
+      record.short &&
+      record.team
+    ) {
       console.log("submitted!");
-      submit({ test: "test" });
+      submit(record);
     }
   };
 
@@ -212,9 +219,9 @@ const Submit = () => {
                               aria-describedby="category"
                               placeholder="https://example.com"
                               onChange={(e) => {
-                                setRecord({ ...record, link: e.target.value });
+                                setRecord({ ...record, url: e.target.value });
                               }}
-                              value={record.link}
+                              value={record.url}
                               required
                             />
                           </div>
@@ -304,7 +311,7 @@ const Submit = () => {
                                   team: e.target.value,
                                 });
                               }}
-                              value={record.motivation}
+                              value={record.team}
                               required
                             ></textarea>
                           </div>

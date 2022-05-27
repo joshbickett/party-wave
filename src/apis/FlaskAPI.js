@@ -4,12 +4,10 @@ export const getContent = async () => {
 
   var request = {
     method: "POST",
+    body: formdata,
     headers: {
-      "Content-Type": "application/json",
       "Access-Control-Allow-Origin": "*",
       "Access-Control-Allow-Private-Network": "true",
-      body: formdata,
-      Accept: "application/json",
     },
   };
 
@@ -21,16 +19,16 @@ export const getContent = async () => {
 
 export const submit = async (record) => {
   var formdata = new FormData();
-  formdata.append("record", record);
+  console.log("record in submitt", record);
+
+  formdata.append("record", JSON.stringify(record));
 
   var request = {
     method: "POST",
+    body: formdata,
     headers: {
-      "Content-Type": "application/json",
       "Access-Control-Allow-Origin": "*",
       "Access-Control-Allow-Private-Network": "true",
-      body: formdata,
-      Accept: "application/json",
     },
   };
 
