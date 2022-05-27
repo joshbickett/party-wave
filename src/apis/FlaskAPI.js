@@ -7,6 +7,7 @@ export const getContent = async () => {
     headers: {
       "Content-Type": "application/json",
       "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Private-Network": "true",
       body: formdata,
       Accept: "application/json",
     },
