@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import icon from "../assets/icon.png";
+import Robots from "../assets/robots.png";
 
 const NavigationMenu = ({ currentPage }) => {
   const pages = [
@@ -15,7 +16,7 @@ const NavigationMenu = ({ currentPage }) => {
 
   if (currentPage === "Explore") {
     var style = {
-      backgroundColor: "#003d80",
+      backgroundColor: "#0d9291",
       display: "grid",
       gridTemplateColumns: "1fr 1fr",
     };
@@ -34,11 +35,35 @@ const NavigationMenu = ({ currentPage }) => {
   }
 
   return (
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style={style}>
-      <div style={{ display: "flex", justifyContent: "flex-start" }}>
-        <a class="navbar-brand" href="/explore">
-          Party Wave
-        </a>
+    <nav style={style}>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "flex-start",
+          alignContent: "center",
+        }}
+      >
+        <img
+          src={Robots}
+          style={{ width: "50px", margin: "5px", borderRadius: "10px" }}
+        />
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+          }}
+        >
+          <a
+            style={{
+              color: "white",
+              textDecoration: "none",
+            }}
+            href="/explore"
+          >
+            Party Wave
+          </a>
+        </div>
       </div>
 
       <div style={{ display: "flex", justifyContent: "flex-end" }}>
@@ -74,6 +99,7 @@ const NavigationMenu = ({ currentPage }) => {
           onClick={() => {
             window.location.href = "/submit";
           }}
+          style={{ margin: "10px" }}
         >
           Submit a project
         </button>

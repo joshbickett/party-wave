@@ -111,15 +111,39 @@ const Explore = () => {
           </div>
         </div>
 
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr" }}>
-          <div style={{ display: "flex", alignItems: "center" }}>
-            <img
-              src={Robots}
-              style={{ width: "200px", margin: "10px", borderRadius: "10px" }}
-            />
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 2fr" }}>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <h3>View by</h3>
+            <div style={{ display: "flex", alignContent: "center" }}>
+              <div
+                style={{
+                  border: "1px solid black",
+                  borderRadius: "10px",
+                  margin: "5px",
+                  backgroundColor: "#f9f9f9",
+                  boxShadow: "0px 0px 1px #000000",
+                }}
+              >
+                <img
+                  src={Robots}
+                  style={{
+                    width: "75px",
+                    margin: "10px",
+                    borderRadius: "10px",
+                  }}
+                />
+                <div>All</div>
+              </div>
+            </div>
           </div>
 
-          <div class=" border-left">
+          <div style={{ border: "1px solid black" }}>
             <div style={{ padding: "0 20px" }}>
               {content.map((record) => {
                 return (
@@ -221,28 +245,6 @@ const Explore = () => {
             >
               See more
             </button>
-          </div>
-          <div>
-            {callToAction.map((call) => {
-              if (call.name === activeTab) {
-                return (
-                  <div
-                    style={{
-                      borderRadius: "5px",
-                      padding: "20px",
-                      margin: "10px 20px",
-                      backgroundColor: "#dae0e5",
-                    }}
-                  >
-                    <h5>{call.subject}</h5>
-                    <p style={{ textAlign: "left" }}>
-                      {call.description}
-                      <a href={call.url}>{call.urlText}</a>.
-                    </p>
-                  </div>
-                );
-              }
-            })}
           </div>
         </div>
       </div>
