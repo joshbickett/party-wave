@@ -1,6 +1,8 @@
 import icon from "../assets/icon.png";
 import Robots from "../assets/robots.png";
 import Writing from "../assets/writing.png";
+import AIImage from "../assets/image.png";
+import Automation from "../assets/automation.png";
 import "../App.css";
 import styled from "@emotion/styled";
 import NavigationMenu from "../components/NavigationMenu";
@@ -60,8 +62,8 @@ const Explore = () => {
           <div class="col-sm-12" style={{ margin: "135px 0 0 0" }}>
             <div class="row">
               <div class="col-sm-12">
-                <h1 class="text-light">Explore ML and AI projects</h1>
-                <p class="text-light">See what people are working on</p>
+                <h1 class="text-light">Explore ML and AI web projects</h1>
+                <p class="text-light">See what's going on</p>
               </div>
             </div>
             {/* <div class="row">
@@ -161,6 +163,46 @@ const Explore = () => {
                   }}
                 />
                 <div>NLP</div>
+              </div>
+            </div>
+            <div style={{ display: "flex", alignContent: "center" }}>
+              <div
+                style={{
+                  border: "1px solid black",
+                  borderRadius: "10px",
+                  margin: "5px",
+                  backgroundColor: "#f9f9f9",
+                  boxShadow: "0px 0px 1px #000000",
+                }}
+              >
+                <img
+                  src={AIImage}
+                  style={{
+                    width: "75px",
+                    margin: "10px",
+                    borderRadius: "10px",
+                  }}
+                />
+                <div>Image</div>
+              </div>
+              <div
+                style={{
+                  border: "1px solid black",
+                  borderRadius: "10px",
+                  margin: "5px",
+                  backgroundColor: "#f9f9f9",
+                  boxShadow: "0px 0px 1px #000000",
+                }}
+              >
+                <img
+                  src={Automation}
+                  style={{
+                    width: "75px",
+                    margin: "10px",
+                    borderRadius: "10px",
+                  }}
+                />
+                <div>Automation</div>
               </div>
             </div>
           </div>
@@ -265,7 +307,7 @@ const Explore = () => {
               class="btn btn-dark"
               style={{ marginTop: "10px" }}
             >
-              See more
+              Coming soon
             </button>
           </div>
         </div>
