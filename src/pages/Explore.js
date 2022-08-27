@@ -1,4 +1,5 @@
 import icon from "../assets/icon.png";
+import Robots from "../assets/robots.png";
 import "../App.css";
 import styled from "@emotion/styled";
 import NavigationMenu from "../components/NavigationMenu";
@@ -54,12 +55,12 @@ const Explore = () => {
     <div className="App">
       <NavigationMenu currentPage={"Explore"} />
       <div class="container-fluid">
-        <div class="row text-white" style={{ backgroundColor: "#0062cc" }}>
+        <div class="row text-white" style={{ backgroundColor: "#11B7B6" }}>
           <div class="col-sm-12" style={{ margin: "135px 0 0 0" }}>
             <div class="row">
               <div class="col-sm-12">
                 <h1 class="text-light">Explore ML and AI projects</h1>
-                <p class="text-light">There's lot's of cool stuff here!</p>
+                <p class="text-light">See what people are working on</p>
               </div>
             </div>
             {/* <div class="row">
@@ -111,190 +112,117 @@ const Explore = () => {
         </div>
 
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr" }}>
-          <div class="col-md-2">
-            <div
-              class="border-bottom"
-              style={{
-                textAlign: "left",
-                fontSize: "20px",
-                fontWeight: "bold",
-              }}
-            >
-              Explore By
-            </div>
-            <div
-              style={{
-                textAlign: "left",
-                fontSize: "20px",
-                margin: "10px 0",
-                cursor: "pointer",
-              }}
-              onClick={() => setViewBy("new")}
-            >
-              What's new
-            </div>
-            <div
-              style={{
-                textAlign: "left",
-                fontSize: "20px",
-                margin: "10px 0",
-                cursor: "pointer",
-              }}
-              onClick={() => setViewBy("popular")}
-            >
-              Popular
-            </div>
+          <div style={{ display: "flex", alignItems: "center" }}>
+            <img
+              src={Robots}
+              style={{ width: "200px", margin: "10px", borderRadius: "10px" }}
+            />
           </div>
 
-          <div class="col-md-6 border-left">
-            <div class="row">
-              <div class="col-md-12" style={{ padding: "0 20px" }}>
-                <div
-                  style={{
-                    width: "100%",
-                    display: "flex",
-                    alignItems: "center",
-                  }}
-                >
-                  <div
+          <div class=" border-left">
+            <div style={{ padding: "0 20px" }}>
+              {content.map((record) => {
+                return (
+                  <AppCard
                     style={{
-                      margin: "0 10px",
-                      fontSize: "25px",
+                      display: "grid",
+                      gridTemplateColumns: "2fr 6fr 3fr 2fr 1fr",
+                      gridGap: "5px",
                     }}
                   >
-                    What's new this
-                  </div>
-                  <div class="dropdown" style={{ margin: "0 10px" }}>
-                    <button
-                      class="btn btn-secondary dropdown-toggle"
-                      type="button"
-                      id="dropdownMenuButton"
-                      data-toggle="dropdown"
-                      aria-haspopup="true"
-                      aria-expanded="false"
-                      style={{ fontSize: "20px" }}
-                    >
-                      Week
-                    </button>
                     <div
-                      class="dropdown-menu"
-                      aria-labelledby="dropdownMenuButton"
-                    >
-                      <a class="dropdown-item" href="#">
-                        Week
-                      </a>
-                      <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="#">
-                        Month
-                      </a>
-                    </div>
-                  </div>
-                </div>
-
-                {content.map((record) => {
-                  return (
-                    <AppCard
                       style={{
-                        display: "grid",
-                        gridTemplateColumns: "2fr 6fr 3fr 2fr 1fr",
-                        gridGap: "5px",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
                       }}
                     >
-                      <div
+                      <img
+                        src={icon}
                         style={{
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "center",
+                          width: "60px",
+                          height: "60px",
+                          borderRadius: "5px",
+                          margin: "0 15px",
                         }}
-                      >
-                        <img
-                          src={icon}
-                          style={{
-                            width: "60px",
-                            height: "60px",
-                            borderRadius: "5px",
-                            margin: "0 15px",
-                          }}
-                        />
-                      </div>
+                      />
+                    </div>
 
-                      <div style={{ textAlign: "left" }}>
-                        <p
-                          style={{
-                            fontSize: "20px",
-                            margin: "0px",
-                            fontWeight: "bold",
-                          }}
-                        >
-                          {record[1]}
-                        </p>
-                        <p
-                          class="text-secondary"
-                          style={{
-                            fontSize: "20px",
-                            color: "#383838",
-                          }}
-                        >
-                          {record[2]}
-                        </p>
-                      </div>
-                      <div
+                    <div style={{ textAlign: "left" }}>
+                      <p
                         style={{
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "center",
+                          fontSize: "20px",
+                          margin: "0px",
+                          fontWeight: "bold",
                         }}
                       >
-                        <span
-                          class="badge badge-secondary"
-                          style={{ margin: "1px" }}
-                        >
-                          {record[4]}
-                        </span>
-                      </div>
-                      <div
+                        {record[1]}
+                      </p>
+                      <p
+                        class="text-secondary"
                         style={{
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "center",
+                          fontSize: "20px",
+                          color: "#383838",
                         }}
                       >
-                        <span
-                          class="badge badge-light"
-                          style={{
-                            paddingTop: "15px",
-                            height: "50px",
-                            fontSize: "20px",
-                          }}
-                        >
-                          {record[5]} 🧠
-                        </span>
-                      </div>
-                      <div
+                        {record[2]}
+                      </p>
+                    </div>
+                    <div
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                      }}
+                    >
+                      <span
+                        class="badge badge-secondary"
+                        style={{ margin: "1px" }}
+                      >
+                        {record[4]}
+                      </span>
+                    </div>
+                    <div
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                      }}
+                    >
+                      <span
+                        class="badge badge-light"
                         style={{
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "center",
+                          paddingTop: "15px",
+                          height: "50px",
+                          fontSize: "20px",
                         }}
                       >
-                        <VoteButton>⬆️</VoteButton>
-                      </div>
-                    </AppCard>
-                  );
-                })}
-              </div>
-              <div class="col-md-1"></div>
+                        {record[5]} 🧠
+                      </span>
+                    </div>
+                    <div
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                      }}
+                    >
+                      <VoteButton>⬆️</VoteButton>
+                    </div>
+                  </AppCard>
+                );
+              })}
             </div>
 
             <button
               type="button"
               class="btn btn-dark"
-              style={{ width: "20%", marginTop: "10px" }}
+              style={{ marginTop: "10px" }}
             >
               See more
             </button>
           </div>
-          <div class="col-md-3">
+          <div>
             {callToAction.map((call) => {
               if (call.name === activeTab) {
                 return (
@@ -302,8 +230,7 @@ const Explore = () => {
                     style={{
                       borderRadius: "5px",
                       padding: "20px",
-                      width: "90%",
-                      margin: "5px auto",
+                      margin: "10px 20px",
                       backgroundColor: "#dae0e5",
                     }}
                   >
