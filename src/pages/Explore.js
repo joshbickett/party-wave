@@ -1,5 +1,6 @@
 import icon from "../assets/icon.png";
 import Robots from "../assets/robots.png";
+import Writing from "../assets/writing.png";
 import "../App.css";
 import styled from "@emotion/styled";
 import NavigationMenu from "../components/NavigationMenu";
@@ -117,9 +118,11 @@ const Explore = () => {
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
+              flexDirection: "column",
             }}
           >
-            <h3>View by</h3>
+            <h3 style={{ margin: "10px" }}>View by</h3>
+
             <div style={{ display: "flex", alignContent: "center" }}>
               <div
                 style={{
@@ -139,6 +142,25 @@ const Explore = () => {
                   }}
                 />
                 <div>All</div>
+              </div>
+              <div
+                style={{
+                  border: "1px solid black",
+                  borderRadius: "10px",
+                  margin: "5px",
+                  backgroundColor: "#f9f9f9",
+                  boxShadow: "0px 0px 1px #000000",
+                }}
+              >
+                <img
+                  src={Writing}
+                  style={{
+                    width: "75px",
+                    margin: "10px",
+                    borderRadius: "10px",
+                  }}
+                />
+                <div>NLP</div>
               </div>
             </div>
           </div>
