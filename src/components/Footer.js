@@ -14,18 +14,18 @@ const Footer = () => {
           {/* <small class="d-block mb-3 text-muted">some company © 2022</small> */}
         </div>
         <div class="col-md-3 col-md">
-          <h5>Page</h5>
+          <h5>Pages</h5>
           <ul class="list-unstyled text-small">
             <li>
               <a class="text-muted" href="/explore">
                 Explore
               </a>
             </li>
-            <li>
+            {/* <li>
               <a class="text-muted" href="/build">
                 Build
               </a>
-            </li>
+            </li> */}
             {/* <li>
               <a class="text-muted" href="/learn">
                 Learn
@@ -36,7 +36,7 @@ const Footer = () => {
         <div class="col-md-3 col-md">
           <h5>About</h5>
           <ul class="list-unstyled text-small">
-            <p class="text-muted">A place for AI projects</p>
+            <p class="text-muted">A place for ML and AI projects</p>
             {/* <li>
               <a class="text-muted" href="#">
                 Team

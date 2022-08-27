@@ -55,16 +55,14 @@ const Explore = () => {
       <NavigationMenu currentPage={"Explore"} />
       <div class="container-fluid">
         <div class="row text-white" style={{ backgroundColor: "#0062cc" }}>
-          <div class="col-sm-12" style={{ margin: "175px 0 0 0" }}>
+          <div class="col-sm-12" style={{ margin: "135px 0 0 0" }}>
             <div class="row">
               <div class="col-sm-12">
-                <h1 class="text-light">
-                  Explore AI tools, projects, and creations
-                </h1>
+                <h1 class="text-light">Explore ML and AI projects</h1>
                 <p class="text-light">There's lot's of cool stuff here!</p>
               </div>
             </div>
-            <div class="row">
+            {/* <div class="row">
               <div class="col-sm-12">
                 <form class="form-inline" style={{ justifyContent: "center" }}>
                   <input
@@ -76,7 +74,7 @@ const Explore = () => {
                   />
                 </form>
               </div>
-            </div>
+            </div> */}
 
             <div style={{ marginTop: "100px" }}>
               {/* <ul class="nav justify-content-center nav-tabs">

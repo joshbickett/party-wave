@@ -58,7 +58,7 @@ const Submit = () => {
       <NavigationMenu currentPage={"Submit"} />
       <div class="container-fluid">
         <div class="row text-white" style={{ backgroundColor: "#6610f2" }}>
-          <div class="col-md-12" style={{ margin: "170px 0 0 0" }}>
+          <div class="col-md-12" style={{ margin: "135px 0 0 0" }}>
             <h1 class="text-light">Submit your creation</h1>
             <p class="text-light">
               You can post your AI content such as apps or small side projects.

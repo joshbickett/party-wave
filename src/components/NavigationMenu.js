@@ -16,36 +16,33 @@ const NavigationMenu = ({ currentPage }) => {
   if (currentPage === "Explore") {
     var style = {
       backgroundColor: "#003d80",
+      display: "grid",
+      gridTemplateColumns: "1fr 1fr",
     };
   } else if (currentPage === "Build") {
     var style = {
       backgroundColor: "#343a40",
+      display: "grid",
+      gridTemplateColumns: "1fr 1fr",
     };
   } else {
     var style = {
       backgroundColor: "#3d0a91",
+      display: "grid",
+      gridTemplateColumns: "1fr 1fr",
     };
   }
 
   return (
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style={style}>
-      <a class="navbar-brand" href="/explore">
-        thelibrary.ai
-      </a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
+      <div style={{ display: "flex", justifyContent: "flex-start" }}>
+        <a class="navbar-brand" href="/explore">
+          thelibrary.ai
+        </a>
+      </div>
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
+      <div style={{ display: "flex", justifyContent: "flex-end" }}>
+        {/* <ul class="navbar-nav mr-auto">
           {pages.map((page) => {
             if (currentPage === page.name) {
               return (
@@ -69,7 +66,7 @@ const NavigationMenu = ({ currentPage }) => {
               );
             }
           })}
-        </ul>
+        </ul> */}
 
         <button
           class="btn bg-light"
