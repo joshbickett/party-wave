@@ -37,7 +37,7 @@ const NavigationMenu = ({ currentPage }) => {
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style={style}>
       <div style={{ display: "flex", justifyContent: "flex-start" }}>
         <a class="navbar-brand" href="/explore">
-          thelibrary.ai
+          Party Wave
         </a>
       </div>
 

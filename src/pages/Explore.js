@@ -110,8 +110,7 @@ const Explore = () => {
           </div>
         </div>
 
-        <div class="row mt-5">
-          <div class="col-md-1"></div>
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr" }}>
           <div class="col-md-2">
             <div
               class="border-bottom"
@@ -150,92 +149,47 @@ const Explore = () => {
           <div class="col-md-6 border-left">
             <div class="row">
               <div class="col-md-12" style={{ padding: "0 20px" }}>
-                {viewBy === "new" && (
+                <div
+                  style={{
+                    width: "100%",
+                    display: "flex",
+                    alignItems: "center",
+                  }}
+                >
                   <div
                     style={{
-                      width: "100%",
-                      display: "flex",
-                      alignItems: "center",
+                      margin: "0 10px",
+                      fontSize: "25px",
                     }}
                   >
-                    <div
-                      style={{
-                        margin: "0 10px",
-                        fontSize: "25px",
-                      }}
+                    What's new this
+                  </div>
+                  <div class="dropdown" style={{ margin: "0 10px" }}>
+                    <button
+                      class="btn btn-secondary dropdown-toggle"
+                      type="button"
+                      id="dropdownMenuButton"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                      style={{ fontSize: "20px" }}
                     >
-                      What's new this
-                    </div>
-                    <div class="dropdown" style={{ margin: "0 10px" }}>
-                      <button
-                        class="btn btn-secondary dropdown-toggle"
-                        type="button"
-                        id="dropdownMenuButton"
-                        data-toggle="dropdown"
-                        aria-haspopup="true"
-                        aria-expanded="false"
-                        style={{ fontSize: "20px" }}
-                      >
+                      Week
+                    </button>
+                    <div
+                      class="dropdown-menu"
+                      aria-labelledby="dropdownMenuButton"
+                    >
+                      <a class="dropdown-item" href="#">
                         Week
-                      </button>
-                      <div
-                        class="dropdown-menu"
-                        aria-labelledby="dropdownMenuButton"
-                      >
-                        <a class="dropdown-item" href="#">
-                          Week
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">
-                          Month
-                        </a>
-                      </div>
+                      </a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#">
+                        Month
+                      </a>
                     </div>
                   </div>
-                )}
-                {viewBy === "popular" && (
-                  <div
-                    style={{
-                      width: "100%",
-                      display: "flex",
-                      alignItems: "center",
-                    }}
-                  >
-                    <div
-                      style={{
-                        margin: "0 10px",
-                        fontSize: "25px",
-                      }}
-                    >
-                      Popular by category
-                    </div>
-                    <div class="dropdown" style={{ margin: "0 10px" }}>
-                      <button
-                        class="btn btn-secondary dropdown-toggle"
-                        type="button"
-                        id="dropdownMenuButton"
-                        data-toggle="dropdown"
-                        aria-haspopup="true"
-                        aria-expanded="false"
-                        style={{ fontSize: "20px" }}
-                      >
-                        All
-                      </button>
-                      <div
-                        class="dropdown-menu"
-                        aria-labelledby="dropdownMenuButton"
-                      >
-                        <a class="dropdown-item" href="#">
-                          GPT-3
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">
-                          DALLE2
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                )}
+                </div>
 
                 {content.map((record) => {
                   return (
