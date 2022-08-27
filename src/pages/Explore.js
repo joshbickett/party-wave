@@ -138,7 +138,7 @@ const Explore = () => {
                 <img
                   src={Robots}
                   style={{
-                    width: "75px",
+                    width: "125px",
                     margin: "10px",
                     borderRadius: "10px",
                   }}
@@ -157,7 +157,7 @@ const Explore = () => {
                 <img
                   src={Writing}
                   style={{
-                    width: "75px",
+                    width: "125px",
                     margin: "10px",
                     borderRadius: "10px",
                   }}
@@ -178,7 +178,7 @@ const Explore = () => {
                 <img
                   src={AIImage}
                   style={{
-                    width: "75px",
+                    width: "125px",
                     margin: "10px",
                     borderRadius: "10px",
                   }}
@@ -197,7 +197,7 @@ const Explore = () => {
                 <img
                   src={Automation}
                   style={{
-                    width: "75px",
+                    width: "125px",
                     margin: "10px",
                     borderRadius: "10px",
                   }}
@@ -207,7 +207,17 @@ const Explore = () => {
             </div>
           </div>
 
-          <div style={{ border: "1px solid black" }}>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              alignContent: "center",
+              justifyContent: "center",
+              backgroundColor: "#d8d8d8",
+              borderRadius: "10px",
+              margin: "10px",
+            }}
+          >
             <div style={{ padding: "0 20px" }}>
               {content.map((record) => {
                 return (
@@ -302,13 +312,21 @@ const Explore = () => {
               })}
             </div>
 
-            <button
-              type="button"
-              class="btn btn-dark"
-              style={{ marginTop: "10px" }}
+            <div
+              style={{
+                marginTop: "10px",
+                borderRadius: "10px",
+                backgroundColor: "#343a40",
+                width: "200px",
+                height: "50px",
+                color: "#ffffff",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
             >
-              Coming soon
-            </button>
+              <div>Coming soon</div>
+            </div>
           </div>
         </div>
       </div>

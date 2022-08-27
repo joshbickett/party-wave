@@ -45,7 +45,7 @@ const NavigationMenu = ({ currentPage }) => {
       >
         <img
           src={Robots}
-          style={{ width: "50px", margin: "5px", borderRadius: "10px" }}
+          style={{ width: "75px", margin: "5px", borderRadius: "10px" }}
         />
         <div
           style={{
@@ -58,6 +58,7 @@ const NavigationMenu = ({ currentPage }) => {
             style={{
               color: "white",
               textDecoration: "none",
+              fontSize: "24px",
             }}
             href="/explore"
           >
