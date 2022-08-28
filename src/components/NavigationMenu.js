@@ -35,7 +35,7 @@ const NavigationMenu = ({ currentPage }) => {
   }
 
   return (
-    <nav style={style}>
+    <div style={style}>
       <div
         style={{
           display: "flex",
@@ -95,17 +95,21 @@ const NavigationMenu = ({ currentPage }) => {
         </ul> */}
 
         <button
-          class="btn bg-light"
           type="submit"
           onClick={() => {
             window.location.href = "/submit";
           }}
-          style={{ margin: "10px" }}
+          style={{
+            margin: "10px",
+            border: "0",
+            color: "black",
+            borderRadius: "5px",
+          }}
         >
           Submit a project
         </button>
       </div>
-    </nav>
+    </div>
   );
 };
 

@@ -55,18 +55,14 @@ const Explore = () => {
   ];
 
   return (
-    <div className="App">
+    <div>
       <NavigationMenu currentPage={"Explore"} />
-      <div class="container-fluid">
-        <div class="row text-white" style={{ backgroundColor: "#11B7B6" }}>
-          <div class="col-sm-12" style={{ margin: "135px 0 0 0" }}>
-            <div class="row">
-              <div class="col-sm-12">
-                <h1 class="text-light">Explore ML and AI web projects</h1>
-                <p class="text-light">See what's going on</p>
-              </div>
-            </div>
-            {/* <div class="row">
+      <div style={{ margin: "0" }}>
+        <div style={{ backgroundColor: "#11B7B6", color: "white" }}>
+          <h1>Explore ML and AI web projects</h1>
+          <p>See what's going on</p>
+
+          {/* <div class="row">
               <div class="col-sm-12">
                 <form class="form-inline" style={{ justifyContent: "center" }}>
                   <input
@@ -80,8 +76,8 @@ const Explore = () => {
               </div>
             </div> */}
 
-            <div style={{ marginTop: "100px" }}>
-              {/* <ul class="nav justify-content-center nav-tabs">
+          <div>
+            {/* <ul class="nav justify-content-center nav-tabs">
                 {tabs.map((tab) => {
                   if (tab.name === activeTab) {
                     return (
@@ -110,7 +106,6 @@ const Explore = () => {
                   }
                 })}
               </ul> */}
-            </div>
           </div>
         </div>
 
