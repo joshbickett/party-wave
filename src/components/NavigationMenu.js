@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import icon from "../assets/icon.png";
 import Robots from "../assets/robots.png";
+import { Button } from "@mui/material";
 
 const NavigationMenu = ({ currentPage }) => {
   const pages = [
@@ -94,20 +95,19 @@ const NavigationMenu = ({ currentPage }) => {
           })}
         </ul> */}
 
-        <button
+        <Button
           type="submit"
+          variant="contained"
           onClick={() => {
             window.location.href = "/submit";
           }}
           style={{
             margin: "10px",
-            border: "0",
-            color: "black",
-            borderRadius: "5px",
+            backgroundColor: "#096362",
           }}
         >
           Submit a project
-        </button>
+        </Button>
       </div>
     </div>
   );
