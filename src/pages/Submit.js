@@ -4,6 +4,7 @@ import { useState } from "react";
 import { submit } from "../apis/FlaskAPI";
 import styled from "@emotion/styled";
 import { TextField } from "@mui/material";
+import { Button } from "@mui/material";
 
 const Submit = () => {
   const [activeTab, setActiveTab] = useState("app");
@@ -145,6 +146,23 @@ const Submit = () => {
                     style={{ width: "300px", margin: "10px 0" }}
                     required
                   />
+                  <SecondaryText>
+                    Share your email so that we can reach out to you after
+                    reviewing your submission.
+                  </SecondaryText>
+
+                  <TextField
+                    id="outlined-basic"
+                    label="creators email"
+                    maxlength="150"
+                    variant="outlined"
+                    onChange={(e) => {
+                      setRecord({ ...record, email: e.target.value });
+                    }}
+                    value={record.email}
+                    style={{ width: "300px", margin: "10px 0" }}
+                    required
+                  />
 
                   <div
                     style={{
@@ -245,7 +263,6 @@ const Submit = () => {
                       }}
                       value={record.twitterCompany}
                       style={{ width: "300px", margin: "10px 0" }}
-                      required
                     />
                   </div>
                   <div
@@ -257,33 +274,30 @@ const Submit = () => {
                   <h2 style={{ textAlign: "left", marginBottom: "15px" }}>
                     Preview Images
                   </h2>
-                  <p style={{ textAlign: "left" }}>
-                    The previews will help users get an idea of what the{" "}
-                    {tab.long} is like.
-                  </p>
-                  <div>
-                    <input type="file" id="validatedCustomFile" required />
-                    <label for="validatedCustomFile">Choose file...</label>
-                    <div>Example invalid custom file feedback</div>
-                  </div>
+                  <SecondaryText>
+                    Nothing is needed right now. We will ask for preview image
+                    by email after the review process.{" "}
+                  </SecondaryText>
                   <div
                     style={{
                       borderBottom: "1px solid gray",
                       margin: "35px 0",
                     }}
                   ></div>
-                  <h2 style={{ textAlign: "left", marginBottom: "15px" }}>
-                    About the team or person that created the {tab.long}
-                  </h2>
-                  <p style={{ textAlign: "left" }}>
-                    Share more the motivation behind the project. Are you
-                    looking for collaborators? Is it just for fun? Now is your
-                    chance to expand upon the foundation of the project.
-                  </p>
+                  <h2>About the team or person that created the {tab.long}</h2>
+                  <SecondaryText>
+                    Share more the motivation behind the project. It may help to
+                    answer such questions such as. Are you looking for
+                    collaborators? Is it just for fun? Now is your chance to
+                    expand upon the foundation of the project.
+                  </SecondaryText>
                   <div>
-                    <textarea
-                      placeholder="Share more detail about the app or project here"
-                      rows="3"
+                    <TextField
+                      id="outlined-multiline-static"
+                      label="more about the team"
+                      multiline
+                      rows={4}
+                      maxRows={4}
                       onChange={(e) => {
                         setRecord({
                           ...record,
@@ -291,14 +305,16 @@ const Submit = () => {
                         });
                       }}
                       value={record.team}
+                      style={{ width: "400px", margin: "10px 0" }}
                       required
-                    ></textarea>
+                    />
                   </div>
                   <div>
-                    <label for="category">Twitter account (optional)</label>
-                    <input
-                      type="text"
-                      aria-describedby="category"
+                    <TextField
+                      id="outlined-basic"
+                      label="team twitter url (optional)"
+                      maxlength="150"
+                      variant="outlined"
                       onChange={(e) => {
                         setRecord({
                           ...record,
@@ -306,26 +322,28 @@ const Submit = () => {
                         });
                       }}
                       value={record.twitter}
-                      placeholder="@me"
+                      style={{ width: "300px", margin: "10px 0" }}
                     />
                   </div>
-
-                  <button
+                  <Button
                     type="submit"
-                    style={{ width: "50%", marginTop: "25px" }}
+                    variant="contained"
                     onClick={() => {
                       submitProject();
                     }}
+                    style={{
+                      margin: "20px 0",
+                      width: "300px",
+                    }}
                   >
-                    SUBMIT
-                  </button>
+                    Submit a project
+                  </Button>
                 </div>
               );
             }
           })}
         </div>
       </div>
-      <Footer />
     </div>
   );
 };
