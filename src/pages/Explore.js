@@ -56,7 +56,11 @@ const Explore = () => {
 
   return (
     <div>
-      <NavigationMenu currentPage={"Explore"} />
+      <NavigationMenu
+        currentPage={"Explore"}
+        backgroundColor={"#0d9291"}
+        buttonBackgroundColor={"#096362"}
+      />
       <div
         style={{
           display: "flex",

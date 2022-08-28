@@ -55,17 +55,31 @@ const Submit = () => {
 
   return (
     <div className="App">
-      <NavigationMenu currentPage={"Submit"} />
-      <div class="container-fluid">
-        <div class="row text-white" style={{ backgroundColor: "#6610f2" }}>
-          <div class="col-md-12" style={{ margin: "135px 0 0 0" }}>
-            <h1 class="text-light">Submit your creation</h1>
-            <p class="text-light">
-              You can post your AI content such as apps or small side projects.
-            </p>
-            <div style={{ marginTop: "100px" }}>
-              {/* <h5 style={{ padding: "10px" }}>Type of submission</h5> */}
-              {/* <ul class="nav justify-content-center nav-tabs">
+      <NavigationMenu
+        currentPage={"Submit"}
+        backgroundColor={"#7646c6"}
+        buttonBackgroundColor={"#6a3fb2"}
+      />
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+        }}
+      >
+        <div
+          style={{
+            backgroundColor: "#9357f5",
+            color: "white",
+            padding: "100px 0",
+          }}
+        >
+          <h1>Submit your creation</h1>
+          <p>
+            You can post your AI content such as apps or small side projects.
+          </p>
+          <div style={{ marginTop: "100px" }}>
+            {/* <h5 style={{ padding: "10px" }}>Type of submission</h5> */}
+            {/* <ul class="nav justify-content-center nav-tabs">
                 {tabs.map((tab) => {
                   if (tab.name === activeTab) {
                     return (
@@ -94,7 +108,6 @@ const Submit = () => {
                   }
                 })}
               </ul> */}
-            </div>
           </div>
         </div>
         <div class="row bg-white" style={{ height: "25px" }}></div>

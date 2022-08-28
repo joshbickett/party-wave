@@ -3,7 +3,7 @@ import icon from "../assets/icon.png";
 import Robots from "../assets/robots.png";
 import { Button } from "@mui/material";
 
-const NavigationMenu = ({ currentPage }) => {
+const NavigationMenu = ({ backgroundColor, buttonBackgroundColor }) => {
   const pages = [
     { name: "Explore", url: "/explore" },
     // { name: "Build", url: "/build" },
@@ -15,25 +15,11 @@ const NavigationMenu = ({ currentPage }) => {
     window.location.href = window.location.origin + url;
   };
 
-  if (currentPage === "Explore") {
-    var style = {
-      backgroundColor: "#0d9291",
-      display: "grid",
-      gridTemplateColumns: "1fr 1fr",
-    };
-  } else if (currentPage === "Build") {
-    var style = {
-      backgroundColor: "#343a40",
-      display: "grid",
-      gridTemplateColumns: "1fr 1fr",
-    };
-  } else {
-    var style = {
-      backgroundColor: "#3d0a91",
-      display: "grid",
-      gridTemplateColumns: "1fr 1fr",
-    };
-  }
+  var style = {
+    backgroundColor: backgroundColor,
+    display: "grid",
+    gridTemplateColumns: "1fr 1fr",
+  };
 
   return (
     <div style={style}>
@@ -103,7 +89,7 @@ const NavigationMenu = ({ currentPage }) => {
           }}
           style={{
             margin: "10px",
-            backgroundColor: "#096362",
+            backgroundColor: buttonBackgroundColor,
           }}
         >
           Submit a project
