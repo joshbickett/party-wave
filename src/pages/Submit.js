@@ -54,7 +54,7 @@ const Submit = () => {
   };
 
   return (
-    <div className="App">
+    <div>
       <NavigationMenu
         currentPage={"Submit"}
         backgroundColor={"#7646c6"}
@@ -78,7 +78,7 @@ const Submit = () => {
             You can post your AI content such as apps or small side projects.
           </p>
           <div style={{ marginTop: "100px" }}>
-            {/* <h5 style={{ padding: "10px" }}>Type of submission</h5> */}
+            {/* <h3 style={{ padding: "10px" }}>Type of submission</h3> */}
             {/* <ul class="nav justify-content-center nav-tabs">
                 {tabs.map((tab) => {
                   if (tab.name === activeTab) {
@@ -115,26 +115,29 @@ const Submit = () => {
             display: "flex",
             flexDirection: "column",
             border: "4px solid black",
+            padding: "20px",
           }}
         >
           {tabs.map((tab) => {
             if (tab.name === activeTab) {
               return (
                 <div>
-                  <h1 style={{ textAlign: "left", margin: "15px 0" }}>
+                  <h1
+                    style={{
+                      textAlign: "left",
+                      margin: "15px 0",
+                    }}
+                  >
                     Share more about the project
                   </h1>
-                  <p style={{ textAlign: "left" }} class="text-secondary">
+                  <p style={{ textAlign: "left" }}>
                     Add information for users to discover your creation
                   </p>
                   <form>
-                    <div class="form-group">
-                      <label for="" style={{ float: "left" }}>
-                        Name of the {tab.long}
-                      </label>
+                    <div>
+                      <label for="">Name of the {tab.long}</label>
                       <input
                         type="text"
-                        class="form-control"
                         aria-describedby="name"
                         placeholder="Enter the name here"
                         onChange={(e) => {
@@ -145,22 +148,20 @@ const Submit = () => {
                       />
                     </div>
                     <div
-                      class="row border-bottom border-secondary"
                       style={{
                         borderBottom: "1px solid gray",
                         margin: "35px 0",
                       }}
                     ></div>
-                    <h5 style={{ textAlign: "left", marginBottom: "15px" }}>
+                    <h3 style={{ textAlign: "left", marginBottom: "15px" }}>
                       Description
-                    </h5>
-                    <div class="form-group">
-                      <label for="category" style={{ float: "left" }}>
+                    </h3>
+                    <div>
+                      <label for="category">
                         One sentence description (short)
                       </label>
                       <input
                         type="text"
-                        class="form-control"
                         maxlength="50"
                         aria-describedby="category"
                         placeholder="Something simple and to the point"
@@ -171,13 +172,10 @@ const Submit = () => {
                         required
                       />
                     </div>
-                    <div class="form-group">
-                      <label for="category" style={{ float: "left" }}>
-                        Category
-                      </label>
+                    <div>
+                      <label for="category">Category</label>
                       <input
                         type="text"
-                        class="form-control"
                         aria-describedby="category"
                         placeholder="Let us know what category you think fits best"
                         onChange={(e) => {
@@ -190,12 +188,9 @@ const Submit = () => {
                         required
                       />
                     </div>
-                    <div class="form-group">
-                      <label for="description" style={{ float: "left" }}>
-                        Detailed description
-                      </label>
+                    <div>
+                      <label for="description">Detailed description</label>
                       <textarea
-                        class="form-control"
                         placeholder="Share more detail about the project here"
                         rows="3"
                         required
@@ -209,22 +204,18 @@ const Submit = () => {
                       ></textarea>
                     </div>
                     <div
-                      class="row border-bottom border-secondary"
                       style={{
                         borderBottom: "1px solid gray",
                         margin: "35px 0",
                       }}
                     ></div>
-                    <h5 style={{ textAlign: "left", marginBottom: "15px" }}>
+                    <h3 style={{ textAlign: "left", marginBottom: "15px" }}>
                       Let user's try it
-                    </h5>
-                    <div class="form-group">
-                      <label for="category" style={{ float: "left" }}>
-                        Link to the {tab.long}
-                      </label>
+                    </h3>
+                    <div>
+                      <label for="category">Link to the {tab.long}</label>
                       <input
                         type="text"
-                        class="form-control"
                         aria-describedby="category"
                         placeholder="https://example.com"
                         onChange={(e) => {
@@ -234,13 +225,12 @@ const Submit = () => {
                         required
                       />
                     </div>
-                    <div class="form-group">
-                      <label for="website" style={{ float: "left" }}>
+                    <div>
+                      <label for="website">
                         Twitter account for the product (optional)
                       </label>
                       <input
                         type="text"
-                        class="form-control"
                         aria-describedby="website"
                         placeholder="@example"
                         onChange={(e) => {
@@ -253,54 +243,39 @@ const Submit = () => {
                       />
                     </div>
                     <div
-                      class="row border-bottom border-secondary"
                       style={{
                         borderBottom: "1px solid gray",
                         margin: "35px 0",
                       }}
                     ></div>
-                    <h5 style={{ textAlign: "left", marginBottom: "15px" }}>
+                    <h3 style={{ textAlign: "left", marginBottom: "15px" }}>
                       Preview Images
-                    </h5>
-                    <p style={{ textAlign: "left" }} class="text-secondary">
+                    </h3>
+                    <p style={{ textAlign: "left" }}>
                       The previews will help users get an idea of what the{" "}
                       {tab.long} is like.
                     </p>
-                    <div class="custom-file">
-                      <input
-                        type="file"
-                        class="custom-file-input"
-                        id="validatedCustomFile"
-                        required
-                      />
-                      <label
-                        class="custom-file-label"
-                        for="validatedCustomFile"
-                      >
-                        Choose file...
-                      </label>
-                      <div class="invalid-feedback">
-                        Example invalid custom file feedback
-                      </div>
+                    <div>
+                      <input type="file" id="validatedCustomFile" required />
+                      <label for="validatedCustomFile">Choose file...</label>
+                      <div>Example invalid custom file feedback</div>
                     </div>
                     <div
-                      class="row border-bottom border-secondary"
                       style={{
                         borderBottom: "1px solid gray",
                         margin: "35px 0",
                       }}
                     ></div>
-                    <h5 style={{ textAlign: "left", marginBottom: "15px" }}>
+                    <h3 style={{ textAlign: "left", marginBottom: "15px" }}>
                       About the team or person that created the {tab.long}
-                    </h5>
-                    <p style={{ textAlign: "left" }} class="text-secondary">
+                    </h3>
+                    <p style={{ textAlign: "left" }}>
                       Share more the motivation behind the project. Are you
                       looking for collaborators? Is it just for fun? Now is your
                       chance to expand upon the foundation of the project.
                     </p>
-                    <div class="form-group">
+                    <div>
                       <textarea
-                        class="form-control"
                         placeholder="Share more detail about the app or project here"
                         rows="3"
                         onChange={(e) => {
@@ -313,13 +288,10 @@ const Submit = () => {
                         required
                       ></textarea>
                     </div>
-                    <div class="form-group">
-                      <label for="category" style={{ float: "left" }}>
-                        Twitter account (optional)
-                      </label>
+                    <div>
+                      <label for="category">Twitter account (optional)</label>
                       <input
                         type="text"
-                        class="form-control"
                         aria-describedby="category"
                         onChange={(e) => {
                           setRecord({
@@ -334,7 +306,6 @@ const Submit = () => {
 
                     <button
                       type="submit"
-                      class="btn btn-dark mb-3"
                       style={{ width: "50%", marginTop: "25px" }}
                       onClick={() => {
                         submitProject();
