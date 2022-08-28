@@ -74,8 +74,10 @@ const Explore = () => {
             padding: "100px 0",
           }}
         >
-          <h1>Explore ML and AI web projects</h1>
-          <p>See what's going on</p>
+          <h1 style={{ textAlign: "center" }}>
+            Explore ML and AI web projects
+          </h1>
+          <p style={{ textAlign: "center" }}>See what's going on</p>
 
           {/* <div class="row">
               <div class="col-sm-12">
@@ -153,7 +155,7 @@ const Explore = () => {
                     borderRadius: "10px",
                   }}
                 />
-                <div>All</div>
+                <div style={{ textAlign: "center" }}>All</div>
               </div>
               <div
                 style={{
@@ -172,7 +174,7 @@ const Explore = () => {
                     borderRadius: "10px",
                   }}
                 />
-                <div>NLP</div>
+                <div style={{ textAlign: "center" }}>NLP</div>
               </div>
             </div>
             <div style={{ display: "flex", alignContent: "center" }}>
@@ -194,7 +196,7 @@ const Explore = () => {
                     borderRadius: "10px",
                   }}
                 />
-                <div>Image</div>
+                <div style={{ textAlign: "center" }}>Image</div>
               </div>
               <div
                 style={{
@@ -213,7 +215,7 @@ const Explore = () => {
                     borderRadius: "10px",
                   }}
                 />
-                <div>Automation</div>
+                <div style={{ textAlign: "center" }}>Automation</div>
               </div>
             </div>
           </div>

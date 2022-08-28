@@ -2,6 +2,8 @@ import NavigationMenu from "../components/NavigationMenu";
 import Footer from "../components/Footer";
 import { useState } from "react";
 import { submit } from "../apis/FlaskAPI";
+import styled from "@emotion/styled";
+import { TextField } from "@mui/material";
 
 const Submit = () => {
   const [activeTab, setActiveTab] = useState("app");
@@ -73,8 +75,8 @@ const Submit = () => {
             padding: "100px 0",
           }}
         >
-          <h1>Submit your creation</h1>
-          <p>
+          <h1 style={{ textAlign: "center" }}>Submit your creation</h1>
+          <p style={{ textAlign: "center" }}>
             You can post your AI content such as apps or small side projects.
           </p>
           <div style={{ marginTop: "100px" }}>
@@ -114,8 +116,7 @@ const Submit = () => {
           style={{
             display: "flex",
             flexDirection: "column",
-            border: "4px solid black",
-            padding: "20px",
+            padding: "25px",
           }}
         >
           {tabs.map((tab) => {
@@ -130,190 +131,189 @@ const Submit = () => {
                   >
                     Share more about the project
                   </h1>
-                  <p style={{ textAlign: "left" }}>
+                  <SecondaryText>
                     Add information for users to discover your creation
-                  </p>
-                  <form>
-                    <div>
-                      <label for="">Name of the {tab.long}</label>
-                      <input
-                        type="text"
-                        aria-describedby="name"
-                        placeholder="Enter the name here"
-                        onChange={(e) => {
-                          setRecord({ ...record, name: e.target.value });
-                        }}
-                        value={record.name}
-                        required
-                      />
-                    </div>
-                    <div
-                      style={{
-                        borderBottom: "1px solid gray",
-                        margin: "35px 0",
-                      }}
-                    ></div>
-                    <h3 style={{ textAlign: "left", marginBottom: "15px" }}>
-                      Description
-                    </h3>
-                    <div>
-                      <label for="category">
-                        One sentence description (short)
-                      </label>
-                      <input
-                        type="text"
-                        maxlength="50"
-                        aria-describedby="category"
-                        placeholder="Something simple and to the point"
-                        onChange={(e) => {
-                          setRecord({ ...record, short: e.target.value });
-                        }}
-                        value={record.short}
-                        required
-                      />
-                    </div>
-                    <div>
-                      <label for="category">Category</label>
-                      <input
-                        type="text"
-                        aria-describedby="category"
-                        placeholder="Let us know what category you think fits best"
-                        onChange={(e) => {
-                          setRecord({
-                            ...record,
-                            category: e.target.value,
-                          });
-                        }}
-                        value={record.category}
-                        required
-                      />
-                    </div>
-                    <div>
-                      <label for="description">Detailed description</label>
-                      <textarea
-                        placeholder="Share more detail about the project here"
-                        rows="3"
-                        required
-                        onChange={(e) => {
-                          setRecord({
-                            ...record,
-                            description: e.target.value,
-                          });
-                        }}
-                        value={record.description}
-                      ></textarea>
-                    </div>
-                    <div
-                      style={{
-                        borderBottom: "1px solid gray",
-                        margin: "35px 0",
-                      }}
-                    ></div>
-                    <h3 style={{ textAlign: "left", marginBottom: "15px" }}>
-                      Let user's try it
-                    </h3>
-                    <div>
-                      <label for="category">Link to the {tab.long}</label>
-                      <input
-                        type="text"
-                        aria-describedby="category"
-                        placeholder="https://example.com"
-                        onChange={(e) => {
-                          setRecord({ ...record, url: e.target.value });
-                        }}
-                        value={record.url}
-                        required
-                      />
-                    </div>
-                    <div>
-                      <label for="website">
-                        Twitter account for the product (optional)
-                      </label>
-                      <input
-                        type="text"
-                        aria-describedby="website"
-                        placeholder="@example"
-                        onChange={(e) => {
-                          setRecord({
-                            ...record,
-                            twitterCompany: e.target.value,
-                          });
-                        }}
-                        value={record.twitterCompany}
-                      />
-                    </div>
-                    <div
-                      style={{
-                        borderBottom: "1px solid gray",
-                        margin: "35px 0",
-                      }}
-                    ></div>
-                    <h3 style={{ textAlign: "left", marginBottom: "15px" }}>
-                      Preview Images
-                    </h3>
-                    <p style={{ textAlign: "left" }}>
-                      The previews will help users get an idea of what the{" "}
-                      {tab.long} is like.
-                    </p>
-                    <div>
-                      <input type="file" id="validatedCustomFile" required />
-                      <label for="validatedCustomFile">Choose file...</label>
-                      <div>Example invalid custom file feedback</div>
-                    </div>
-                    <div
-                      style={{
-                        borderBottom: "1px solid gray",
-                        margin: "35px 0",
-                      }}
-                    ></div>
-                    <h3 style={{ textAlign: "left", marginBottom: "15px" }}>
-                      About the team or person that created the {tab.long}
-                    </h3>
-                    <p style={{ textAlign: "left" }}>
-                      Share more the motivation behind the project. Are you
-                      looking for collaborators? Is it just for fun? Now is your
-                      chance to expand upon the foundation of the project.
-                    </p>
-                    <div>
-                      <textarea
-                        placeholder="Share more detail about the app or project here"
-                        rows="3"
-                        onChange={(e) => {
-                          setRecord({
-                            ...record,
-                            team: e.target.value,
-                          });
-                        }}
-                        value={record.team}
-                        required
-                      ></textarea>
-                    </div>
-                    <div>
-                      <label for="category">Twitter account (optional)</label>
-                      <input
-                        type="text"
-                        aria-describedby="category"
-                        onChange={(e) => {
-                          setRecord({
-                            ...record,
-                            twitter: e.target.value,
-                          });
-                        }}
-                        value={record.twitter}
-                        placeholder="@me"
-                      />
-                    </div>
+                  </SecondaryText>
 
-                    <button
-                      type="submit"
-                      style={{ width: "50%", marginTop: "25px" }}
-                      onClick={() => {
-                        submitProject();
+                  <div>
+                    <TextField
+                      id="outlined-basic"
+                      label="Project name"
+                      variant="outlined"
+                      onChange={(e) => {
+                        setRecord({ ...record, name: e.target.value });
                       }}
-                    >
-                      SUBMIT
-                    </button>
-                  </form>
+                      value={record.name}
+                      required
+                      style={{ width: "200px", margin: "10px 0" }}
+                    />
+                  </div>
+                  <div
+                    style={{
+                      borderBottom: "1px solid gray",
+                      margin: "35px 0",
+                    }}
+                  ></div>
+                  <h3 style={{ textAlign: "left", marginBottom: "15px" }}>
+                    Description
+                  </h3>
+                  <div>
+                    <label for="category">
+                      One sentence description (short)
+                    </label>
+                    <input
+                      type="text"
+                      maxlength="50"
+                      aria-describedby="category"
+                      placeholder="Something simple and to the point"
+                      onChange={(e) => {
+                        setRecord({ ...record, short: e.target.value });
+                      }}
+                      value={record.short}
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label for="category">Category</label>
+                    <input
+                      type="text"
+                      aria-describedby="category"
+                      placeholder="Let us know what category you think fits best"
+                      onChange={(e) => {
+                        setRecord({
+                          ...record,
+                          category: e.target.value,
+                        });
+                      }}
+                      value={record.category}
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label for="description">Detailed description</label>
+                    <textarea
+                      placeholder="Share more detail about the project here"
+                      rows="3"
+                      required
+                      onChange={(e) => {
+                        setRecord({
+                          ...record,
+                          description: e.target.value,
+                        });
+                      }}
+                      value={record.description}
+                    ></textarea>
+                  </div>
+                  <div
+                    style={{
+                      borderBottom: "1px solid gray",
+                      margin: "35px 0",
+                    }}
+                  ></div>
+                  <h3 style={{ textAlign: "left", marginBottom: "15px" }}>
+                    Let user's try it
+                  </h3>
+                  <div>
+                    <label for="category">Link to the {tab.long}</label>
+                    <input
+                      type="text"
+                      aria-describedby="category"
+                      placeholder="https://example.com"
+                      onChange={(e) => {
+                        setRecord({ ...record, url: e.target.value });
+                      }}
+                      value={record.url}
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label for="website">
+                      Twitter account for the product (optional)
+                    </label>
+                    <input
+                      type="text"
+                      aria-describedby="website"
+                      placeholder="@example"
+                      onChange={(e) => {
+                        setRecord({
+                          ...record,
+                          twitterCompany: e.target.value,
+                        });
+                      }}
+                      value={record.twitterCompany}
+                    />
+                  </div>
+                  <div
+                    style={{
+                      borderBottom: "1px solid gray",
+                      margin: "35px 0",
+                    }}
+                  ></div>
+                  <h3 style={{ textAlign: "left", marginBottom: "15px" }}>
+                    Preview Images
+                  </h3>
+                  <p style={{ textAlign: "left" }}>
+                    The previews will help users get an idea of what the{" "}
+                    {tab.long} is like.
+                  </p>
+                  <div>
+                    <input type="file" id="validatedCustomFile" required />
+                    <label for="validatedCustomFile">Choose file...</label>
+                    <div>Example invalid custom file feedback</div>
+                  </div>
+                  <div
+                    style={{
+                      borderBottom: "1px solid gray",
+                      margin: "35px 0",
+                    }}
+                  ></div>
+                  <h3 style={{ textAlign: "left", marginBottom: "15px" }}>
+                    About the team or person that created the {tab.long}
+                  </h3>
+                  <p style={{ textAlign: "left" }}>
+                    Share more the motivation behind the project. Are you
+                    looking for collaborators? Is it just for fun? Now is your
+                    chance to expand upon the foundation of the project.
+                  </p>
+                  <div>
+                    <textarea
+                      placeholder="Share more detail about the app or project here"
+                      rows="3"
+                      onChange={(e) => {
+                        setRecord({
+                          ...record,
+                          team: e.target.value,
+                        });
+                      }}
+                      value={record.team}
+                      required
+                    ></textarea>
+                  </div>
+                  <div>
+                    <label for="category">Twitter account (optional)</label>
+                    <input
+                      type="text"
+                      aria-describedby="category"
+                      onChange={(e) => {
+                        setRecord({
+                          ...record,
+                          twitter: e.target.value,
+                        });
+                      }}
+                      value={record.twitter}
+                      placeholder="@me"
+                    />
+                  </div>
+
+                  <button
+                    type="submit"
+                    style={{ width: "50%", marginTop: "25px" }}
+                    onClick={() => {
+                      submitProject();
+                    }}
+                  >
+                    SUBMIT
+                  </button>
                 </div>
               );
             }
@@ -326,3 +326,8 @@ const Submit = () => {
 };
 
 export default Submit;
+
+const SecondaryText = styled.p`
+  font-size: 16px;
+  color: #8e8e8e;
+`;
