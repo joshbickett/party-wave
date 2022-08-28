@@ -137,7 +137,14 @@ const Explore = () => {
           >
             <h3 style={{ margin: "10px" }}>View by</h3>
 
-            <div style={{ display: "flex", alignContent: "center" }}>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "center",
+                flexWrap: "wrap",
+              }}
+            >
               <div
                 style={{
                   border: "1px solid black",
@@ -176,8 +183,6 @@ const Explore = () => {
                 />
                 <div style={{ textAlign: "center" }}>NLP</div>
               </div>
-            </div>
-            <div style={{ display: "flex", alignContent: "center" }}>
               <div
                 style={{
                   border: "1px solid black",
@@ -231,7 +236,7 @@ const Explore = () => {
               margin: "10px",
             }}
           >
-            <div style={{ padding: "0 20px" }}>
+            {/* <div style={{ padding: "0 20px" }}>
               {content.map((record) => {
                 return (
                   <AppCard
@@ -323,7 +328,7 @@ const Explore = () => {
                   </AppCard>
                 );
               })}
-            </div>
+            </div> */}
 
             <div
               style={{
