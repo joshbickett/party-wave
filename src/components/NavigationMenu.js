@@ -81,7 +81,7 @@ const NavigationMenu = ({ backgroundColor, buttonBackgroundColor }) => {
           })}
         </ul> */}
 
-        <Button
+        {/* <Button
           type="submit"
           variant="contained"
           onClick={() => {
@@ -93,7 +93,7 @@ const NavigationMenu = ({ backgroundColor, buttonBackgroundColor }) => {
           }}
         >
           Submit a project
-        </Button>
+        </Button> */}
       </div>
     </div>
   );
