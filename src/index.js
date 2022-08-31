@@ -7,6 +7,7 @@ import Build from "./pages/Build";
 import Submit from "./pages/Submit";
 import Learn from "./pages/Learn";
 import reportWebVitals from "./reportWebVitals";
+import Landing from "./pages/Landing";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
@@ -15,8 +16,8 @@ root.render(
   <BrowserRouter>
     <div className="App">
       <Routes>
-        <Route path="/" element={<Explore />}></Route>
-        <Route path="/explore" element={<Explore />}></Route>
+        <Route path="/" element={<Landing />}></Route>
+        {/* <Route path="/explore" element={<Explore />}></Route> */}
         <Route path="/submit" element={<Submit />}></Route>
         <Route path="/build" element={<Build />}></Route>
         <Route path="/learn" element={<Learn />}></Route>

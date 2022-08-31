@@ -12,7 +12,7 @@ import { useState, useEffect } from "react";
 import { tab } from "@testing-library/user-event/dist/tab";
 
 import { getContent } from "../apis/FlaskAPI";
-const Explore = () => {
+const Landing = () => {
   useEffect(() => {
     getContent().then((result) => {
       setContent(result);
@@ -75,10 +75,10 @@ const Explore = () => {
             padding: "100px 0",
           }}
         >
-          <h1 style={{ textAlign: "center" }}>
+          <h1 style={{ textAlign: "center" }}>COMING SOON</h1>
+          <h3 style={{ textAlign: "center" }}>
             Explore ML and AI web projects
-          </h1>
-          <p style={{ textAlign: "center" }}>See what's going on</p>
+          </h3>
 
           {/* <div class="row">
               <div class="col-sm-12">
@@ -127,7 +127,10 @@ const Explore = () => {
           </div>
         </div>
 
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 2fr" }}>
+        <div
+          style={{ display: "grid", gridTemplateColumns: "1fr 2fr" }}
+          className="content-container"
+        >
           <div
             style={{
               display: "flex",
@@ -136,7 +139,7 @@ const Explore = () => {
               flexDirection: "column",
             }}
           >
-            <h3 style={{ margin: "10px" }}>View by</h3>
+            <h3 style={{ margin: "10px" }}>Discovery projects by category</h3>
 
             <div
               style={{
@@ -231,22 +234,22 @@ const Explore = () => {
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
-              backgroundColor: "#f3f3f3",
+              backgroundColor: "#f6f6f6",
               borderRadius: "10px",
               margin: "10px",
               padding: "10px",
             }}
           >
-            <h2 style={{ margin: "0" }}>Coming soon</h2>
-            <p style={{ textAlign: "center" }}>
-              See what cool apps are out there or share something you are
-              working on.
-            </p>
+            {/* <h2 style={{ margin: "0" }}>Coming soon</h2> */}
+
             <img
               src={Launch}
               alt="launch"
               style={{ width: "300px", borderRadius: "10px" }}
             />
+            <h5 style={{ textAlign: "center" }}>
+              Share something you are working on and find collaborators
+            </h5>
             {/* <div style={{ padding: "0 20px" }}>
               {content.map((record) => {
                 return (
@@ -364,7 +367,7 @@ const Explore = () => {
   );
 };
 
-export default Explore;
+export default Landing;
 
 const AppContainer = styled.div`
   padding: 5px;
