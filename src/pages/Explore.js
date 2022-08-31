@@ -2,6 +2,7 @@ import icon from "../assets/icon.png";
 import Robots from "../assets/robots.png";
 import Writing from "../assets/writing.png";
 import AIImage from "../assets/image.png";
+import Launch from "../assets/launch.png";
 import Automation from "../assets/automation.png";
 import "../App.css";
 import styled from "@emotion/styled";
@@ -74,10 +75,10 @@ const Explore = () => {
             padding: "100px 0",
           }}
         >
-          <h1 style={{ textAlign: "center" }}>
+          <h1 style={{ textAlign: "center" }}>COMING SOON</h1>
+          <h3 style={{ textAlign: "center" }}>
             Explore ML and AI web projects
-          </h1>
-          <p style={{ textAlign: "center" }}>See what's going on</p>
+          </h3>
 
           {/* <div class="row">
               <div class="col-sm-12">
@@ -126,7 +127,10 @@ const Explore = () => {
           </div>
         </div>
 
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 2fr" }}>
+        <div
+          style={{ display: "grid", gridTemplateColumns: "1fr 2fr" }}
+          className="content-container"
+        >
           <div
             style={{
               display: "flex",
@@ -135,7 +139,7 @@ const Explore = () => {
               flexDirection: "column",
             }}
           >
-            <h3 style={{ margin: "10px" }}>View by</h3>
+            <h3 style={{ margin: "10px" }}>Discovery projects by category</h3>
 
             <div
               style={{
@@ -228,14 +232,24 @@ const Explore = () => {
           <div
             style={{
               display: "flex",
-              flexDirection: "row",
-              alignContent: "center",
-              justifyContent: "center",
-              backgroundColor: "#d8d8d8",
+              flexDirection: "column",
+              alignItems: "center",
+              backgroundColor: "#f6f6f6",
               borderRadius: "10px",
               margin: "10px",
+              padding: "10px",
             }}
           >
+            {/* <h2 style={{ margin: "0" }}>Coming soon</h2> */}
+
+            <img
+              src={Launch}
+              alt="launch"
+              style={{ width: "300px", borderRadius: "10px" }}
+            />
+            <h5 style={{ textAlign: "center" }}>
+              Share something you are working on and find collaborators
+            </h5>
             {/* <div style={{ padding: "0 20px" }}>
               {content.map((record) => {
                 return (
@@ -330,7 +344,7 @@ const Explore = () => {
               })}
             </div> */}
 
-            <div
+            {/* <div
               style={{
                 marginTop: "10px",
                 borderRadius: "10px",
@@ -344,7 +358,7 @@ const Explore = () => {
               }}
             >
               <div>Coming soon</div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

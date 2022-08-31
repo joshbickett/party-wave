@@ -8,7 +8,13 @@ const Footer = () => {
   };
 
   return (
-    <div class="container" style={{ marginTop: "50px" }}>
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
       <div>
         <a
           href="https://twitter.com/partywave?ref_src=twsrc%5Etfw"
