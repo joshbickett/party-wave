@@ -153,83 +153,29 @@ const Explore = () => {
                 flexWrap: "wrap",
               }}
             >
-              <div
-                style={{
-                  border: "1px solid black",
-                  borderRadius: "10px",
-                  margin: "5px",
-                  backgroundColor: "#f9f9f9",
-                  boxShadow: "0px 0px 1px #000000",
-                }}
-              >
-                <img
-                  src={Robots}
-                  style={{
-                    width: "125px",
-                    margin: "10px",
-                    borderRadius: "10px",
-                  }}
-                />
-                <div style={{ textAlign: "center" }}>All</div>
-              </div>
-              <div
-                style={{
-                  border: "1px solid black",
-                  borderRadius: "10px",
-                  margin: "5px",
-                  backgroundColor: "#f9f9f9",
-                  boxShadow: "0px 0px 1px #000000",
-                }}
-              >
-                <img
-                  src={Writing}
-                  style={{
-                    width: "125px",
-                    margin: "10px",
-                    borderRadius: "10px",
-                  }}
-                />
-                <div style={{ textAlign: "center" }}>NLP</div>
-              </div>
-              <div
-                style={{
-                  border: "1px solid black",
-
-                  borderRadius: "10px",
-                  margin: "5px",
-                  backgroundColor: "#f9f9f9",
-                  boxShadow: "0px 0px 1px #000000",
-                }}
-              >
-                <img
-                  src={AIImage}
-                  style={{
-                    width: "125px",
-                    margin: "10px",
-                    borderRadius: "10px",
-                  }}
-                />
-                <div style={{ textAlign: "center" }}>Image</div>
-              </div>
-              <div
-                style={{
-                  border: "1px solid black",
-                  borderRadius: "10px",
-                  margin: "5px",
-                  backgroundColor: "#f9f9f9",
-                  boxShadow: "0px 0px 1px #000000",
-                }}
-              >
-                <img
-                  src={Automation}
-                  style={{
-                    width: "125px",
-                    margin: "10px",
-                    borderRadius: "10px",
-                  }}
-                />
-                <div style={{ textAlign: "center" }}>Automation</div>
-              </div>
+              {filters.map((filter) => {
+                return (
+                  <div
+                    style={{
+                      border: "1px solid black",
+                      borderRadius: "10px",
+                      margin: "5px",
+                      backgroundColor: "#f9f9f9",
+                      boxShadow: "0px 0px 1px #000000",
+                    }}
+                  >
+                    <img
+                      src={filter.img}
+                      style={{
+                        width: "125px",
+                        margin: "10px",
+                        borderRadius: "10px",
+                      }}
+                    />
+                    <div style={{ textAlign: "center" }}>{filter.name}</div>
+                  </div>
+                );
+              })}
             </div>
           </div>
 
