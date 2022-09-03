@@ -55,6 +55,13 @@ const Explore = () => {
     },
   ];
 
+  const filters = [
+    { name: "All", img: Robots },
+    { name: "NLP", img: Writing },
+    { name: "Image", img: AIImage },
+    { name: "Automation", img: Automation },
+  ];
+
   return (
     <div>
       <NavigationMenu
