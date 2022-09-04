@@ -63,8 +63,10 @@ const Explore = () => {
 
   const [activeFilter, setActiveFilter] = useState("All");
 
-  const appCardClicked = () => {
-    console.log("app card clicked");
+  const appCardClicked = (e) => {
+    const voteButton = document.getElementById("vote-button");
+    if (e.target.id === "vote-button") return;
+    console.log("increase vote");
   };
 
   return (
