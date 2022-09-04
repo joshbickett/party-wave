@@ -317,10 +317,16 @@ const AppContainer = styled.div`
 
 const FilterCard = styled.div`
   border: 1px solid black;
-  borderradius: 10px;
+  border-radius: 10px;
   margin: 5px;
-  backgroundcolor: #f9f9f9;
+  background-color: #f9f9f9;
   boxshadow: 0px 0px 1px #000000;
+  :hover {
+    scale: 1.01;
+  }
+  :active {
+    scale: 1.05;
+  }
 `;
 
 const AppCard = styled.div`
