@@ -178,6 +178,7 @@ const Explore = () => {
                           margin: "10px",
                           borderRadius: "10px",
                         }}
+                        onClick={() => setActiveFilter(filter.name)}
                       />
                       <div style={{ textAlign: "center" }}>{filter.name}</div>
                     </FilterCard>
@@ -348,7 +349,7 @@ const FilterCardActive = styled.div`
   border: 1px solid black;
   border-radius: 10px;
   margin: 5px;
-  background-color: #e7f7f7;
+  background-color: #cff0f0;
 `;
 
 const AppCard = styled.div`
