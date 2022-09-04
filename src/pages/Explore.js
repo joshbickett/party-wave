@@ -63,6 +63,10 @@ const Explore = () => {
 
   const [activeFilter, setActiveFilter] = useState("All");
 
+  const appCardClicked = () => {
+    console.log("app card clicked");
+  };
+
   return (
     <div>
       <NavigationMenu
@@ -210,6 +214,7 @@ const Explore = () => {
                       gridTemplateColumns: "2fr 6fr 3fr 2fr 1fr",
                       gridGap: "5px",
                     }}
+                    onClick={appCardClicked}
                   >
                     <div
                       style={{
@@ -294,7 +299,7 @@ const Explore = () => {
                         justifyContent: "center",
                       }}
                     >
-                      <VoteButton>⬆️</VoteButton>
+                      <VoteButton id="vote-button">⬆️</VoteButton>
                     </div>
                   </AppCard>
                 );
