@@ -73,7 +73,7 @@ const Submit = () => {
           style={{
             backgroundColor: "#9357f5",
             color: "white",
-            padding: "100px 0",
+            padding: "50px 0",
           }}
         >
           <h1 style={{ textAlign: "center" }}>Submit your creation</h1>
