@@ -282,7 +282,7 @@ const Explore = () => {
                           fontSize: "20px",
                         }}
                       >
-                        {record[5]} 🧠
+                        {record[5]} 🌊
                       </span>
                     </div>
                     <div
@@ -298,22 +298,6 @@ const Explore = () => {
                 );
               })}
             </div>
-
-            {/* <div
-              style={{
-                marginTop: "10px",
-                borderRadius: "10px",
-                backgroundColor: "#343a40",
-                width: "200px",
-                height: "50px",
-                color: "#ffffff",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
-              <div>Coming soon</div>
-            </div> */}
           </div>
         </div>
       </div>
@@ -361,9 +345,9 @@ const AppCard = styled.div`
 const VoteButton = styled.div`
   font-size: 20px;
   &:hover {
-    font-size: 30px;
+    scale: 1.05;
   }
   &:active {
-    font-size: 50px;
+    scale: 1.1;
   }
 `;
