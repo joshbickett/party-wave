@@ -92,9 +92,7 @@ const Explore = () => {
             padding: "50px 0",
           }}
         >
-          <h1 style={{ textAlign: "center" }}>
-            Explore ML and AI web projects
-          </h1>
+          <h1 style={{ textAlign: "center" }}>Explore AI-first web projects</h1>
           <p style={{ textAlign: "center" }}>See what's going on</p>
 
           {/* <div class="row">
@@ -120,7 +118,9 @@ const Explore = () => {
             appCardClicked={appCardClicked}
           />
         )}
-        {activeProject !== 0 && <ProjectView />}
+        {activeProject !== 0 && (
+          <ProjectView project={content[activeProject]} />
+        )}
       </div>
       <Footer />
     </div>
