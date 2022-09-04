@@ -199,17 +199,7 @@ const Explore = () => {
               padding: "10px",
             }}
           >
-            <h2 style={{ margin: "0" }}>Coming soon</h2>
-            <p style={{ textAlign: "center" }}>
-              See what cool apps are out there or share something you are
-              working on.
-            </p>
-            <img
-              src={Launch}
-              alt="launch"
-              style={{ width: "300px", borderRadius: "10px" }}
-            />
-            {/* <div style={{ padding: "0 20px" }}>
+            <div style={{ padding: "0 20px" }}>
               {content.map((record) => {
                 return (
                   <AppCard
@@ -301,7 +291,7 @@ const Explore = () => {
                   </AppCard>
                 );
               })}
-            </div> */}
+            </div>
 
             {/* <div
               style={{

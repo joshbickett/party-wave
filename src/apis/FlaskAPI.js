@@ -1,3 +1,5 @@
+const url = "http://127.0.0.1:5000";
+
 export const getContent = async () => {
   var formdata = new FormData();
   formdata.append("name", "John");
@@ -11,8 +13,8 @@ export const getContent = async () => {
     },
   };
 
-  const result = await fetch("http://127.0.0.1:5000/get_content", request).then(
-    (response) => response.json()
+  const result = await fetch(url + "/get_content", request).then((response) =>
+    response.json()
   );
   return result;
 };
@@ -32,8 +34,8 @@ export const submit = async (record) => {
     },
   };
 
-  const result = await fetch("http://127.0.0.1:5000/submit", request).then(
-    (response) => response.json()
+  const result = await fetch(url + "/submit", request).then((response) =>
+    response.json()
   );
   return result;
 };
