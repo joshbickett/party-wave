@@ -9,7 +9,8 @@ import styled from "@emotion/styled";
 import NavigationMenu from "../components/NavigationMenu";
 import Footer from "../components/Footer";
 import { useState, useEffect } from "react";
-import { tab } from "@testing-library/user-event/dist/tab";
+
+import { Button } from "@mui/material";
 
 import { getContent } from "../apis/FlaskAPI";
 const Explore = () => {
@@ -134,7 +135,7 @@ const Explore = () => {
           </div>
         </div>
 
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 2fr" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 2fr 0.2fr" }}>
           <div
             style={{
               display: "flex",
@@ -199,6 +200,7 @@ const Explore = () => {
             }}
           >
             <h3 style={{ margin: "10px" }}>Projects</h3>
+
             <div style={{ padding: "0 20px" }}>
               {content?.map((record) => {
                 return (
@@ -298,6 +300,8 @@ const Explore = () => {
                 );
               })}
             </div>
+            <Button style={{ color: "#0b807f" }}>See more</Button>
+            <div></div>
           </div>
         </div>
       </div>
@@ -335,10 +339,11 @@ const FilterCardActive = styled.div`
 const AppCard = styled.div`
   border-radius: 5px;
   margin: 15px 5px;
-  box-shadow: 1px 3px 5px #dbdbdb;
+  box-shadow: 1px 1px 2px #dbdbdb;
   padding: 5px 0;
-  &:hover {
-    box-shadow: 1px 3px 10px #dbdbdb;
+  cursor: pointer;
+  :hover {
+    box-shadow: 1px 2px 5px #dbdbdb;
   }
 `;
 
