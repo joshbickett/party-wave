@@ -155,15 +155,7 @@ const Explore = () => {
             >
               {filters.map((filter) => {
                 return (
-                  <div
-                    style={{
-                      border: "1px solid black",
-                      borderRadius: "10px",
-                      margin: "5px",
-                      backgroundColor: "#f9f9f9",
-                      boxShadow: "0px 0px 1px #000000",
-                    }}
-                  >
+                  <FilterCard>
                     <img
                       src={filter.img}
                       style={{
@@ -173,7 +165,7 @@ const Explore = () => {
                       }}
                     />
                     <div style={{ textAlign: "center" }}>{filter.name}</div>
-                  </div>
+                  </FilterCard>
                 );
               })}
             </div>
@@ -321,6 +313,14 @@ export default Explore;
 
 const AppContainer = styled.div`
   padding: 5px;
+`;
+
+const FilterCard = styled.div`
+  border: 1px solid black;
+  borderradius: 10px;
+  margin: 5px;
+  backgroundcolor: #f9f9f9;
+  boxshadow: 0px 0px 1px #000000;
 `;
 
 const AppCard = styled.div`
