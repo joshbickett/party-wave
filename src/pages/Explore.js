@@ -25,8 +25,6 @@ const Explore = () => {
 
   const tabs = [
     { name: "apps", description: "Apps and projects 💻", short: "Apps" },
-    // { name: "gallery", description: "Gallery 🖼", short: "Creations" },
-    // { name: "models", description: "AI Models 🤖", short: "Models" },
   ];
 
   const callToAction = [
@@ -61,6 +59,8 @@ const Explore = () => {
     { name: "Image", img: AIImage },
     { name: "Automation", img: Automation },
   ];
+
+  const [activeFilter, setActiveFilter] = useState("All");
 
   return (
     <div>
@@ -154,19 +154,35 @@ const Explore = () => {
               }}
             >
               {filters.map((filter) => {
-                return (
-                  <FilterCard>
-                    <img
-                      src={filter.img}
-                      style={{
-                        width: "125px",
-                        margin: "10px",
-                        borderRadius: "10px",
-                      }}
-                    />
-                    <div style={{ textAlign: "center" }}>{filter.name}</div>
-                  </FilterCard>
-                );
+                if (filter.name === activeFilter) {
+                  return (
+                    <FilterCardActive>
+                      <img
+                        src={filter.img}
+                        style={{
+                          width: "125px",
+                          margin: "10px",
+                          borderRadius: "10px",
+                        }}
+                      />
+                      <div style={{ textAlign: "center" }}>{filter.name}</div>
+                    </FilterCardActive>
+                  );
+                } else {
+                  return (
+                    <FilterCard>
+                      <img
+                        src={filter.img}
+                        style={{
+                          width: "125px",
+                          margin: "10px",
+                          borderRadius: "10px",
+                        }}
+                      />
+                      <div style={{ textAlign: "center" }}>{filter.name}</div>
+                    </FilterCard>
+                  );
+                }
               })}
             </div>
           </div>
@@ -320,13 +336,19 @@ const FilterCard = styled.div`
   border-radius: 10px;
   margin: 5px;
   background-color: #f9f9f9;
-  boxshadow: 0px 0px 1px #000000;
   :hover {
     scale: 1.01;
   }
   :active {
     scale: 1.05;
   }
+`;
+
+const FilterCardActive = styled.div`
+  border: 1px solid black;
+  border-radius: 10px;
+  margin: 5px;
+  background-color: #e7f7f7;
 `;
 
 const AppCard = styled.div`
