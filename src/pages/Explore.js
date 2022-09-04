@@ -119,7 +119,10 @@ const Explore = () => {
           />
         )}
         {activeProject !== 0 && (
-          <ProjectView project={content[activeProject]} />
+          <ProjectView
+            project={content[activeProject]}
+            setActiveProject={setActiveProject}
+          />
         )}
       </div>
       <Footer />
