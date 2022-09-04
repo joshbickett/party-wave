@@ -13,9 +13,11 @@ export const getContent = async () => {
     },
   };
 
-  const result = await fetch(url + "/get_content", request).then((response) =>
-    response.json()
-  );
+  const result = await fetch(url + "/get_content", request)
+    .then((response) => response.json())
+    .catch((error) => {
+      console.log("error", error);
+    });
   return result;
 };
 
@@ -30,12 +32,13 @@ export const submit = async (record) => {
     body: formdata,
     headers: {
       "Access-Control-Allow-Origin": "*",
-      "Access-Control-Allow-Private-Network": "true",
     },
   };
 
-  const result = await fetch(url + "/submit", request).then((response) =>
-    response.json()
-  );
+  const result = await fetch(url + "/submit", request)
+    .then((response) => response.json())
+    .catch((error) => {
+      console.log("error", error);
+    });
   return result;
 };
