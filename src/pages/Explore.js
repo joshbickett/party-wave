@@ -10,6 +10,7 @@ import NavigationMenu from "../components/NavigationMenu";
 import Footer from "../components/Footer";
 import { useState, useEffect } from "react";
 import ProjectDiscovery from "../components/ProjectDiscovery";
+import ProjectView from "../components/ProjectView";
 
 import { getContent } from "../apis/FlaskAPI";
 const Explore = () => {
@@ -119,7 +120,7 @@ const Explore = () => {
             appCardClicked={appCardClicked}
           />
         )}
-        {activeProject !== 0 && <div>hello world </div>}
+        {activeProject !== 0 && <ProjectView />}
       </div>
       <Footer />
     </div>
