@@ -1,6 +1,5 @@
 import React from "react";
 import "../App.css";
-import { useState, useEffect } from "react";
 import styled from "@emotion/styled";
 import icon from "../assets/icon.png";
 import { Button } from "@mui/material";
@@ -43,6 +42,7 @@ const ProjectDiscovery = ({
                       margin: "10px",
                       borderRadius: "10px",
                     }}
+                    alt=""
                   />
                   <div style={{ textAlign: "center" }}>{filter.name}</div>
                 </FilterCardActive>
@@ -57,6 +57,7 @@ const ProjectDiscovery = ({
                       margin: "10px",
                       borderRadius: "10px",
                     }}
+                    alt="filter"
                     onClick={() => setActiveFilter(filter.name)}
                   />
                   <div style={{ textAlign: "center" }}>{filter.name}</div>
@@ -88,7 +89,7 @@ const ProjectDiscovery = ({
                   gridGap: "5px",
                 }}
                 onClick={(e) => {
-                  appCardClicked(e);
+                  appCardClicked(e, record);
                 }}
               >
                 <div
@@ -106,6 +107,7 @@ const ProjectDiscovery = ({
                       borderRadius: "5px",
                       margin: "0 15px",
                     }}
+                    alt="icon"
                   />
                 </div>
 

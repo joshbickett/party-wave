@@ -64,10 +64,11 @@ const Explore = () => {
 
   const [activeFilter, setActiveFilter] = useState("All");
 
-  const appCardClicked = (e) => {
+  const appCardClicked = (e, record) => {
     const voteButton = document.getElementById("vote-button");
     if (e.target.id === "vote-button") return;
-    console.log("increase vote");
+    console.log("app selected", record);
+    setActiveProject(record[0]);
   };
 
   return (
@@ -118,6 +119,7 @@ const Explore = () => {
             appCardClicked={appCardClicked}
           />
         )}
+        {activeProject !== 0 && <div>hello world </div>}
       </div>
       <Footer />
     </div>
