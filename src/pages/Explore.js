@@ -79,7 +79,7 @@ const Explore = () => {
           style={{
             backgroundColor: "#11B7B6",
             color: "white",
-            padding: "100px 0",
+            padding: "50px 0",
           }}
         >
           <h1 style={{ textAlign: "center" }}>
@@ -193,14 +193,14 @@ const Explore = () => {
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
-              backgroundColor: "#f3f3f3",
               borderRadius: "10px",
               margin: "10px",
               padding: "10px",
             }}
           >
+            <h3 style={{ margin: "10px" }}>Projects</h3>
             <div style={{ padding: "0 20px" }}>
-              {content.map((record) => {
+              {content?.map((record) => {
                 return (
                   <AppCard
                     style={{
@@ -227,25 +227,31 @@ const Explore = () => {
                       />
                     </div>
 
-                    <div style={{ textAlign: "left" }}>
-                      <p
+                    <div
+                      style={{
+                        display: "flex",
+                        flexDirection: "column",
+                        justifyContent: "center",
+                      }}
+                    >
+                      <div
                         style={{
                           fontSize: "20px",
-                          margin: "0px",
                           fontWeight: "bold",
+                          padding: "0",
                         }}
                       >
                         {record[1]}
-                      </p>
-                      <p
+                      </div>
+                      <div
                         class="text-secondary"
                         style={{
-                          fontSize: "20px",
+                          fontSize: "16px",
                           color: "#383838",
                         }}
                       >
                         {record[2]}
-                      </p>
+                      </div>
                     </div>
                     <div
                       style={{

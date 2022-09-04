@@ -5,21 +5,6 @@ import NavigationMenu from "../components/NavigationMenu";
 import Footer from "../components/Footer";
 
 const Home = () => {
-  const apps = [
-    {
-      icon: "here",
-      name: "makememe.ai",
-      description: "Make memes in under 5 seconds using ai",
-      tags: ["gpt-3", "python"],
-    },
-    {
-      icon: "here",
-      name: "makememe.ai",
-      description: "Make memes in under 5 seconds using ai",
-      tags: ["gpt-3", "funny"],
-    },
-  ];
-
   return (
     <div className="App">
       <NavigationMenu currentPage={"Home"} />
