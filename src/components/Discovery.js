@@ -8,7 +8,7 @@ const Discovery = ({
   filters,
   activeFilter,
   setActiveFilter,
-  project,
+  projects,
   appCardClicked,
 }) => {
   return (
@@ -80,7 +80,7 @@ const Discovery = ({
         <h3 style={{ margin: "10px" }}>Projects</h3>
 
         <div style={{ padding: "0 20px" }}>
-          {project?.map((record) => {
+          {projects?.map((record, index) => {
             return (
               <AppCard
                 style={{
@@ -89,7 +89,7 @@ const Discovery = ({
                   gridGap: "5px",
                 }}
                 onClick={(e) => {
-                  appCardClicked(e, record);
+                  appCardClicked(e, index);
                 }}
               >
                 <div

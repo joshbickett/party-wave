@@ -5,7 +5,7 @@ const ProjectView = ({ project, setActiveProject }) => {
   console.log("project", project);
   return (
     <div>
-      <Button style={{ margin: "10px" }} onClick={() => setActiveProject(0)}>
+      <Button style={{ margin: "10px" }} onClick={() => setActiveProject(-1)}>
         Go back
       </Button>
       <div

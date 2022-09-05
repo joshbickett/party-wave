@@ -17,12 +17,22 @@ const Explore = () => {
   useEffect(() => {
     getContent().then((result) => {
       console.log("result: ", result.records);
-      setProject(result.records);
+      setProjects(result.records);
     });
   }, []);
-  const [project, setProject] = useState([]);
+  const [projects, setProjects] = useState([]);
+
   const [viewBy, setViewBy] = useState("new");
-  const [activeProjectID, setActiveProjectID] = useState(0);
+  const [currentProjectID, setCurrentProjectID] = useState(-1);
+  // const [currentProject, setCurrentProject] = useState({});
+
+  useEffect(() => {
+    // content[activeProject]
+    // console.log("activeProjectID", activeProjectID);
+    // console.log("projects", projects);
+    // const project = projects[activeProjectID];
+    // console.log("project", project);
+  }, [currentProjectID]);
 
   const [activeTab, setActiveTab] = useState("apps");
 
@@ -65,11 +75,10 @@ const Explore = () => {
 
   const [activeFilter, setActiveFilter] = useState("All");
 
-  const appCardClicked = (e, record) => {
-    const voteButton = document.getElementById("vote-button");
+  const appCardClicked = (e, index) => {
     if (e.target.id === "vote-button") return;
-    console.log("app selected", record);
-    setActiveProjectID(record[0]);
+    console.log("clicked", index);
+    setCurrentProjectID(index);
   };
 
   return (
@@ -109,17 +118,17 @@ const Explore = () => {
               </div>
             </div> */}
         </div>
-        {activeProjectID === 0 && (
+        {currentProjectID === -1 && (
           <Discovery
             filters={filters}
             activeFilter={activeFilter}
             setActiveFilter={setActiveFilter}
-            project={project}
+            projects={projects}
             appCardClicked={appCardClicked}
           />
         )}
-        {activeProjectID !== 0 && (
-          <ProjectView project={""} setActiveProject={setActiveProjectID} />
+        {currentProjectID !== -1 && (
+          <ProjectView project={""} setActiveProject={setCurrentProjectID} />
         )}
       </div>
       <Footer />
