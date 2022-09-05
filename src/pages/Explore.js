@@ -138,7 +138,10 @@ const Explore = () => {
           />
         )}
         {currentProject && (
-          <ProjectView project={""} setCurrentProject={setCurrentProject} />
+          <ProjectView
+            currentProject={currentProject}
+            setCurrentProject={setCurrentProject}
+          />
         )}
       </div>
       <Footer />

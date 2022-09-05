@@ -1,8 +1,8 @@
 import icon from "../assets/icon.png";
 import { Button } from "@mui/material";
 
-const ProjectView = ({ project, setCurrentProject }) => {
-  console.log("project", project);
+const ProjectView = ({ currentProject, setCurrentProject }) => {
+  console.log("project", currentProject);
   return (
     <div>
       <Button
@@ -20,10 +20,10 @@ const ProjectView = ({ project, setCurrentProject }) => {
       >
         <img src={icon} alt="project" style={{ width: "200px" }} />
         <div style={{ padding: "10px" }}>
-          <h2>{project[1]}</h2>
-          <p>{project[2]}</p>
+          <h2>{currentProject?.name}</h2>
+          <p>{currentProject?.description}</p>
           {/* <p>{project[4]}</p> */}
-          <p>{project[5]}</p>
+          {/* <p>{project[5]}</p> */}
         </div>
       </div>
     </div>
