@@ -6,12 +6,6 @@ const ProjectView = ({ currentProject, setCurrentProject }) => {
   console.log("project", currentProject);
   return (
     <div>
-      <Button
-        style={{ margin: "10px" }}
-        onClick={() => setCurrentProject(null)}
-      >
-        Go back
-      </Button>
       <div
         style={{
           display: "grid",
@@ -20,27 +14,37 @@ const ProjectView = ({ currentProject, setCurrentProject }) => {
         }}
       >
         <div style={{ display: "flex", flexDirection: "row" }}>
-          {currentProject?.assets?.images[0] && (
-            <img
-              src={currentProject?.assets?.images[0]}
-              alt="project"
-              style={{ height: "200px", border: "1px solid gray" }}
-            />
-          )}
-
-          <div style={{ padding: "10px" }}>
+          <div>
+            <Button
+              style={{ margin: "10px" }}
+              onClick={() => setCurrentProject(null)}
+            >
+              Go back
+            </Button>
             <div style={{ display: "flex", flexDirection: "row" }}>
-              <div style={{ margin: "3px" }}>{currentProject?.votes}</div>
-              <div>🌊</div>
+              {currentProject?.assets?.images[0] && (
+                <img
+                  src={currentProject?.assets?.images[0]}
+                  alt="project"
+                  style={{ height: "200px", border: "1px solid gray" }}
+                />
+              )}
+
+              <div style={{ padding: "10px" }}>
+                <div style={{ display: "flex", flexDirection: "row" }}>
+                  <div style={{ margin: "3px" }}>{currentProject?.votes}</div>
+                  <div>🌊</div>
+                </div>
+
+                <h2>{currentProject?.name}</h2>
+                <p>{currentProject?.description}</p>
+
+                <div>test</div>
+
+                {/* <p>{project[4]}</p> */}
+                {/* <p>{project[5]}</p> */}
+              </div>
             </div>
-
-            <h2>{currentProject?.name}</h2>
-            <p>{currentProject?.description}</p>
-
-            <div>test</div>
-
-            {/* <p>{project[4]}</p> */}
-            {/* <p>{project[5]}</p> */}
           </div>
         </div>
         <AssetCarousel assets={currentProject?.assets} />
