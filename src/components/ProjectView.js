@@ -18,6 +18,7 @@ const ProjectView = ({ currentProject, setCurrentProject }) => {
           gridTemplateColumns: "1fr 1fr",
           padding: "0 20px",
         }}
+        className="content-container"
       >
         <div>
           <div

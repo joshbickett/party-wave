@@ -62,6 +62,7 @@ const AssetCarousel = ({ assets }) => {
     if (activeStep === 0 && assets?.youtube) {
       return (
         <iframe
+          className="youtube-iframe"
           width="560"
           height="315"
           src={assets?.youtube.split(".be/").join("be.com/embed/")}
