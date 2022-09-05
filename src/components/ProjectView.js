@@ -1,5 +1,6 @@
 import icon from "../assets/icon.png";
 import { Button } from "@mui/material";
+import AssetCarousel from "./AssetCarousel";
 
 const ProjectView = ({ currentProject, setCurrentProject }) => {
   console.log("project", currentProject);
@@ -42,21 +43,7 @@ const ProjectView = ({ currentProject, setCurrentProject }) => {
             {/* <p>{project[5]}</p> */}
           </div>
         </div>
-        <div>
-          {currentProject?.assets?.youtube && (
-            <iframe
-              width="560"
-              height="315"
-              src={currentProject?.assets?.youtube
-                .split(".be/")
-                .join("be.com/embed/")}
-              title="YouTube video player"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-            ></iframe>
-          )}
-        </div>
+        <AssetCarousel assets={currentProject?.assets} />
       </div>
     </div>
   );
