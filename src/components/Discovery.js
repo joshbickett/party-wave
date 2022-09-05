@@ -84,106 +84,114 @@ const Discovery = ({
         <h3 style={{ margin: "10px" }}>Projects</h3>
 
         <div style={{ padding: "0 20px" }}>
-          {projects?.map((project) => {
-            return (
-              <AppCard
-                style={{
-                  display: "grid",
-                  gridTemplateColumns: "2fr 6fr 3fr 2fr 1fr",
-                  gridGap: "5px",
-                }}
-                onClick={(e) => {
-                  appCardClicked(e, project);
-                }}
-              >
-                <div
+          {projects
+            .filter(
+              (project) =>
+                project.type === activeFilter || activeFilter === "All"
+            )
+            .map((project) => {
+              return (
+                <AppCard
                   style={{
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
+                    display: "grid",
+                    gridTemplateColumns: "2fr 6fr 3fr 2fr 1fr",
+                    gridGap: "5px",
+                  }}
+                  onClick={(e) => {
+                    appCardClicked(e, project);
                   }}
                 >
-                  <img
-                    src={project?.assets?.icon}
+                  <div
                     style={{
-                      width: "60px",
-                      height: "60px",
-                      borderRadius: "5px",
-                      margin: "0 15px",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
                     }}
-                    alt="icon"
-                  />
-                </div>
+                  >
+                    <img
+                      src={project?.assets?.icon}
+                      style={{
+                        width: "60px",
+                        height: "60px",
+                        borderRadius: "5px",
+                        margin: "0 15px",
+                      }}
+                      alt="icon"
+                    />
+                  </div>
 
-                <div
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "center",
-                  }}
-                >
                   <div
                     style={{
-                      fontSize: "20px",
-                      fontWeight: "bold",
-                      padding: "0",
+                      display: "flex",
+                      flexDirection: "column",
+                      justifyContent: "center",
                     }}
                   >
-                    {project?.name}
+                    <div
+                      style={{
+                        fontSize: "20px",
+                        fontWeight: "bold",
+                        padding: "0",
+                      }}
+                    >
+                      {project?.name}
+                    </div>
+                    <div
+                      class="text-secondary"
+                      style={{
+                        fontSize: "16px",
+                        color: "#383838",
+                      }}
+                    >
+                      {project?.description}
+                    </div>
                   </div>
                   <div
-                    class="text-secondary"
                     style={{
-                      fontSize: "16px",
-                      color: "#383838",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
                     }}
                   >
-                    {project?.description}
+                    <span
+                      class="badge badge-secondary"
+                      style={{ margin: "1px" }}
+                    >
+                      {project?.details && project?.details?.category}
+                    </span>
                   </div>
-                </div>
-                <div
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                  }}
-                >
-                  <span class="badge badge-secondary" style={{ margin: "1px" }}>
-                    {project?.details && project?.details?.category}
-                  </span>
-                </div>
-                <div
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                  }}
-                >
-                  <span
-                    class="badge badge-light"
+                  <div
                     style={{
-                      paddingTop: "15px",
-                      height: "50px",
-                      fontSize: "20px",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
                     }}
                   >
-                    {project?.votes} 🌊
-                  </span>
-                </div>
-                <div
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                  }}
-                >
-                  <VoteButton id="vote-button">⬆️</VoteButton>
-                </div>
-              </AppCard>
-            );
-          })}
+                    <span
+                      class="badge badge-light"
+                      style={{
+                        paddingTop: "15px",
+                        height: "50px",
+                        fontSize: "20px",
+                      }}
+                    >
+                      {project?.votes} 🌊
+                    </span>
+                  </div>
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <VoteButton id="vote-button">⬆️</VoteButton>
+                  </div>
+                </AppCard>
+              );
+            })}
         </div>
-        <Button style={{ color: "#0b807f" }}>See more</Button>
+        {/* <Button style={{ color: "#0b807f" }}>See more</Button> */}
         <div></div>
       </div>
     </div>
