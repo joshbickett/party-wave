@@ -74,7 +74,7 @@ const AssetCarousel = ({ assets }) => {
     }
   };
   return (
-    <Box sx={{ flexGrow: 1, padding: "50px" }}>
+    <Box sx={{ flexGrow: 1, padding: "0 25px" }}>
       {(() => showAsset())()}
       {assets?.images?.map((step, index) => {
         console.log("step", step);
