@@ -9,7 +9,7 @@ import styled from "@emotion/styled";
 import NavigationMenu from "../components/NavigationMenu";
 import Footer from "../components/Footer";
 import { useState, useEffect } from "react";
-import ProjectDiscovery from "../components/ProjectDiscovery";
+import Discovery from "../components/Discovery";
 import ProjectView from "../components/ProjectView";
 
 import { getContent } from "../apis/FlaskAPI";
@@ -58,7 +58,7 @@ const Explore = () => {
 
   const filters = [
     { name: "All", img: Robots },
-    { name: "NLP", img: Writing },
+    { name: "Language", img: Writing },
     { name: "Image", img: AIImage },
     { name: "Automation", img: Automation },
   ];
@@ -110,7 +110,7 @@ const Explore = () => {
             </div> */}
         </div>
         {activeProject === 0 && (
-          <ProjectDiscovery
+          <Discovery
             filters={filters}
             activeFilter={activeFilter}
             setActiveFilter={setActiveFilter}

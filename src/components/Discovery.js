@@ -4,7 +4,7 @@ import styled from "@emotion/styled";
 import icon from "../assets/icon.png";
 import { Button } from "@mui/material";
 
-const ProjectDiscovery = ({
+const Discovery = ({
   filters,
   activeFilter,
   setActiveFilter,
@@ -186,7 +186,7 @@ const ProjectDiscovery = ({
   );
 };
 
-export default ProjectDiscovery;
+export default Discovery;
 
 const FilterCardActive = styled.div`
   border: 1px solid black;
