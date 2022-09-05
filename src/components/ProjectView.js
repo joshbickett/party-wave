@@ -19,7 +19,14 @@ const ProjectView = ({ currentProject, setCurrentProject }) => {
         }}
       >
         <div style={{ display: "flex", flexDirection: "row" }}>
-          <img src={icon} alt="project" style={{ height: "200px" }} />
+          {currentProject?.assets?.images[0] && (
+            <img
+              src={currentProject?.assets?.images[0]}
+              alt="project"
+              style={{ height: "200px", border: "1px solid gray" }}
+            />
+          )}
+
           <div style={{ padding: "10px" }}>
             <div style={{ display: "flex", flexDirection: "row" }}>
               <div style={{ margin: "3px" }}>{currentProject?.votes}</div>
