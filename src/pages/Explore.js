@@ -22,7 +22,7 @@ const Explore = () => {
   }, []);
   const [project, setProject] = useState([]);
   const [viewBy, setViewBy] = useState("new");
-  const [activeProject, setActiveProject] = useState(0);
+  const [activeProjectID, setActiveProjectID] = useState(0);
 
   const [activeTab, setActiveTab] = useState("apps");
 
@@ -69,7 +69,7 @@ const Explore = () => {
     const voteButton = document.getElementById("vote-button");
     if (e.target.id === "vote-button") return;
     console.log("app selected", record);
-    setActiveProject(record[0]);
+    setActiveProjectID(record[0]);
   };
 
   return (
@@ -109,7 +109,7 @@ const Explore = () => {
               </div>
             </div> */}
         </div>
-        {activeProject === 0 && (
+        {activeProjectID === 0 && (
           <Discovery
             filters={filters}
             activeFilter={activeFilter}
@@ -118,8 +118,8 @@ const Explore = () => {
             appCardClicked={appCardClicked}
           />
         )}
-        {activeProject !== 0 && (
-          <ProjectView project={""} setActiveProject={setActiveProject} />
+        {activeProjectID !== 0 && (
+          <ProjectView project={""} setActiveProject={setActiveProjectID} />
         )}
       </div>
       <Footer />
