@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useState } from "react";
 import { useTheme } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import MobileStepper from "@mui/material/MobileStepper";
@@ -38,8 +39,13 @@ const images = [
 const AssetCarousel = ({ assets }) => {
   // {currentProject?.assets?.youtube && (
   const theme = useTheme();
-  const [activeStep, setActiveStep] = React.useState(0);
-  const maxSteps = images.length;
+  const [activeStep, setActiveStep] = useState(0);
+  console.log("assets", assets);
+  let maxSteps = 0;
+  if (assets?.youtube) maxSteps++;
+  if (assets?.images) maxSteps += assets.images.length;
+
+  console.log("maxSteps", maxSteps);
 
   const handleNext = () => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
@@ -52,30 +58,32 @@ const AssetCarousel = ({ assets }) => {
   const handleStepChange = (step) => {
     setActiveStep(step);
   };
+  const showAsset = (asset) => {
+    if (activeStep === 0 && assets?.youtube) {
+      return (
+        <iframe
+          width="560"
+          height="315"
+          src={assets?.youtube.split(".be/").join("be.com/embed/")}
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      );
+    }
+  };
   return (
-    <Box sx={{ maxWidth: 400, flexGrow: 1 }}>
-      <Paper
-        square
-        elevation={0}
-        sx={{
-          display: "flex",
-          alignItems: "center",
-          height: 50,
-          pl: 2,
-          bgcolor: "background.default",
-        }}
-      >
-        <Typography>{images[activeStep].label}</Typography>
-      </Paper>
-      <AutoPlaySwipeableViews
-        axis={theme.direction === "rtl" ? "x-reverse" : "x"}
-        index={activeStep}
-        onChangeIndex={handleStepChange}
-        enableMouseEvents
-      >
-        {images.map((step, index) => (
-          <div key={step.label}>
-            {Math.abs(activeStep - index) <= 2 ? (
+    <Box sx={{ maxWidth: 400, flexGrow: 1, padding: "50px" }}>
+      {(() => showAsset())()}
+      {assets?.images?.map((step, index) => {
+        console.log("step", step);
+        console.log("index", index);
+        console.log("activeStep", activeStep);
+
+        if (index === activeStep - 1) {
+          return (
+            <div key={index}>
               <Box
                 component="img"
                 sx={{
@@ -85,13 +93,12 @@ const AssetCarousel = ({ assets }) => {
                   overflow: "hidden",
                   width: "100%",
                 }}
-                src={step.imgPath}
-                alt={step.label}
+                src={step}
               />
-            ) : null}
-          </div>
-        ))}
-      </AutoPlaySwipeableViews>
+            </div>
+          );
+        }
+      })}
       <MobileStepper
         steps={maxSteps}
         position="static"
