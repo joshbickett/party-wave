@@ -74,7 +74,7 @@ const AssetCarousel = ({ assets }) => {
     }
   };
   return (
-    <Box sx={{ maxWidth: 400, flexGrow: 1, padding: "50px" }}>
+    <Box sx={{ flexGrow: 1, padding: "50px" }}>
       {(() => showAsset())()}
       {assets?.images?.map((step, index) => {
         console.log("step", step);
@@ -83,7 +83,14 @@ const AssetCarousel = ({ assets }) => {
 
         if (index === activeStep - 1) {
           return (
-            <div key={index}>
+            <div
+              key={index}
+              style={{
+                display: "flex",
+                alignContent: "center",
+                justifyContent: "center",
+              }}
+            >
               <Box
                 component="img"
                 sx={{
