@@ -19,7 +19,7 @@ const ProjectView = ({ project, setActiveProject }) => {
         <div style={{ padding: "10px" }}>
           <h2>{project[1]}</h2>
           <p>{project[2]}</p>
-          <p>{project[4]}</p>
+          {/* <p>{project[4]}</p> */}
           <p>{project[5]}</p>
         </div>
       </div>

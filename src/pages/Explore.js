@@ -16,11 +16,11 @@ import { getContent } from "../apis/FlaskAPI";
 const Explore = () => {
   useEffect(() => {
     getContent().then((result) => {
-      console.log("result: ", result);
-      setContent(result);
+      console.log("result: ", result.records);
+      setProject(result.records);
     });
   }, []);
-  const [content, setContent] = useState([]);
+  const [project, setProject] = useState([]);
   const [viewBy, setViewBy] = useState("new");
   const [activeProject, setActiveProject] = useState(0);
 
@@ -114,15 +114,12 @@ const Explore = () => {
             filters={filters}
             activeFilter={activeFilter}
             setActiveFilter={setActiveFilter}
-            content={content}
+            project={project}
             appCardClicked={appCardClicked}
           />
         )}
         {activeProject !== 0 && (
-          <ProjectView
-            project={content[activeProject]}
-            setActiveProject={setActiveProject}
-          />
+          <ProjectView project={""} setActiveProject={setActiveProject} />
         )}
       </div>
       <Footer />

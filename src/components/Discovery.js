@@ -8,7 +8,7 @@ const Discovery = ({
   filters,
   activeFilter,
   setActiveFilter,
-  content,
+  project,
   appCardClicked,
 }) => {
   return (
@@ -80,7 +80,7 @@ const Discovery = ({
         <h3 style={{ margin: "10px" }}>Projects</h3>
 
         <div style={{ padding: "0 20px" }}>
-          {content?.map((record) => {
+          {project?.map((record) => {
             return (
               <AppCard
                 style={{
@@ -145,7 +145,7 @@ const Discovery = ({
                   }}
                 >
                   <span class="badge badge-secondary" style={{ margin: "1px" }}>
-                    {record[4]}
+                    {/* {record[4]} */}
                   </span>
                 </div>
                 <div
