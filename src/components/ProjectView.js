@@ -16,7 +16,7 @@ const ProjectView = ({ currentProject, setCurrentProject }) => {
         style={{
           display: "grid",
           gridTemplateColumns: "1fr 1fr",
-          padding: "20px",
+          padding: "0 20px",
         }}
       >
         <div style={{ display: "flex", flexDirection: "row" }}>
