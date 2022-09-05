@@ -20,8 +20,14 @@ const ProjectView = ({ currentProject, setCurrentProject }) => {
       >
         <img src={icon} alt="project" style={{ width: "200px" }} />
         <div style={{ padding: "10px" }}>
+          <div style={{ display: "flex", flexDirection: "row" }}>
+            <div style={{ margin: "3px" }}>{currentProject?.votes}</div>
+            <div>🌊</div>
+          </div>
+
           <h2>{currentProject?.name}</h2>
           <p>{currentProject?.description}</p>
+
           {/* <p>{project[4]}</p> */}
           {/* <p>{project[5]}</p> */}
         </div>
