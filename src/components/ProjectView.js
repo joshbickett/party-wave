@@ -26,12 +26,46 @@ const ProjectView = ({ currentProject, setCurrentProject }) => {
               flexDirection: "row",
               backgroundColor: "#F8F8F8",
               borderRadius: "10px",
+              margin: "10px",
             }}
           >
             <div style={{ padding: "10px" }}>
-              <div style={{ display: "flex", flexDirection: "row" }}>
-                <div style={{ margin: "3px" }}>{currentProject?.votes}</div>
-                <div>🌊</div>
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  alignContent: "center",
+                }}
+              >
+                {currentProject?.assets?.icon && (
+                  <img
+                    src={currentProject?.assets?.icon}
+                    alt="project"
+                    style={{ height: "100px", border: "1px solid gray" }}
+                  />
+                )}
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    flexDirection: "column",
+                    padding: "10px",
+                  }}
+                >
+                  <div
+                    style={{
+                      display: "flex",
+                      justifyContent: "center",
+                      flexDirection: "row",
+                      backgroundColor: "#E0E0E0",
+                      padding: "10px",
+                      borderRadius: "10px",
+                    }}
+                  >
+                    <div style={{ margin: "5px" }}>{currentProject?.votes}</div>
+                    <div>🌊</div>
+                  </div>
+                </div>
               </div>
 
               <h2>{currentProject?.name}</h2>
