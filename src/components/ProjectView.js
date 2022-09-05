@@ -4,6 +4,9 @@ import AssetCarousel from "./AssetCarousel";
 
 const ProjectView = ({ currentProject, setCurrentProject }) => {
   console.log("project", currentProject);
+  const goToWebsite = () => {
+    window.open(currentProject.details?.link, "_blank");
+  };
   return (
     <div>
       <Button
@@ -56,24 +59,40 @@ const ProjectView = ({ currentProject, setCurrentProject }) => {
                   <div
                     style={{
                       display: "flex",
-                      justifyContent: "center",
                       flexDirection: "row",
-                      backgroundColor: "#E0E0E0",
-                      padding: "10px",
-                      borderRadius: "10px",
+                      alignContent: "center",
+                      justifyContent: "center",
                     }}
                   >
-                    <div style={{ margin: "5px" }}>{currentProject?.votes}</div>
-                    <div>🌊</div>
+                    <div
+                      style={{
+                        display: "flex",
+                        justifyContent: "center",
+                        flexDirection: "row",
+                        backgroundColor: "#E0E0E0",
+                        padding: "10px",
+                        borderRadius: "10px",
+                      }}
+                    >
+                      <div style={{ margin: "5px" }}>
+                        {currentProject?.votes}
+                      </div>
+                      <div>🌊</div>
+                    </div>
                   </div>
+                  <Button
+                    style={{ margin: "5px 0 0 0", backgroundColor: "#3BB7B6" }}
+                    variant="contained"
+                    onClick={goToWebsite}
+                  >
+                    Go to website
+                  </Button>
                 </div>
               </div>
 
               <h2>{currentProject?.name}</h2>
-              <p>{currentProject?.description}</p>
 
-              {/* <p>{project[4]}</p> */}
-              {/* <p>{project[5]}</p> */}
+              <p>{currentProject?.description}</p>
             </div>
           </div>
         </div>
