@@ -12,6 +12,9 @@
     flex-direction: column;
     align-items: center;
   }
+  .project-list {
+    border: none !important;
+  }
 }
 
 @media (prefers-reduced-motion: no-preference) {

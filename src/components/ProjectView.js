@@ -71,8 +71,6 @@ const ProjectView = ({ currentProject, setCurrentProject }) => {
               <h2>{currentProject?.name}</h2>
               <p>{currentProject?.description}</p>
 
-              <div>test</div>
-
               {/* <p>{project[4]}</p> */}
               {/* <p>{project[5]}</p> */}
             </div>

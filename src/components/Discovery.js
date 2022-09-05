@@ -12,7 +12,10 @@ const Discovery = ({
   appCardClicked,
 }) => {
   return (
-    <div style={{ display: "grid", gridTemplateColumns: "1fr 2fr 0.2fr" }}>
+    <div
+      style={{ display: "grid", gridTemplateColumns: "1fr 2fr 0.2fr" }}
+      className="content-container"
+    >
       <div
         style={{
           display: "flex",
@@ -76,6 +79,7 @@ const Discovery = ({
           margin: "20px",
           borderLeft: "1px solid black",
         }}
+        className="project-list"
       >
         <h3 style={{ margin: "10px" }}>Projects</h3>
 
@@ -100,7 +104,7 @@ const Discovery = ({
                   }}
                 >
                   <img
-                    src={icon}
+                    src={project?.assets?.icon}
                     style={{
                       width: "60px",
                       height: "60px",
