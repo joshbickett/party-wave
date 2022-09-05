@@ -23,16 +23,26 @@ const Explore = () => {
   const [projects, setProjects] = useState([]);
 
   const [viewBy, setViewBy] = useState("new");
-  const [currentProjectID, setCurrentProjectID] = useState(-1);
-  // const [currentProject, setCurrentProject] = useState({});
+  const [currentProject, setCurrentProject] = useState(null);
 
-  useEffect(() => {
-    // content[activeProject]
-    // console.log("activeProjectID", activeProjectID);
-    // console.log("projects", projects);
-    // const project = projects[activeProjectID];
-    // console.log("project", project);
-  }, [currentProjectID]);
+  // useEffect(() => {
+  //   // content[activeProject]
+  //   console.log("currentProjectID useEffect", currentProjectID);
+  //   if (currentProjectID !== -1) {
+  //     const project = {
+  //       id: projects[currentProjectID][0],
+  //       name: projects[currentProjectID][1],
+  //       description: projects[currentProjectID][2],
+  //       image: projects[currentProjectID][0]?.primary,
+  //       link: projects[currentProjectID].link,
+  //       tags: projects[currentProjectID].tags,
+  //     };
+  //     console.log("project", project);
+  //   }
+  //   // console.log("projects", projects);
+  //   // const project = projects[activeProjectID];
+  //   // console.log("project", project);
+  // }, [currentProjectID]);
 
   const [activeTab, setActiveTab] = useState("apps");
 
@@ -75,10 +85,10 @@ const Explore = () => {
 
   const [activeFilter, setActiveFilter] = useState("All");
 
-  const appCardClicked = (e, index) => {
+  const appCardClicked = (e, project) => {
     if (e.target.id === "vote-button") return;
-    console.log("clicked", index);
-    setCurrentProjectID(index);
+    console.log("clicked", project);
+    setCurrentProject(project);
   };
 
   return (
@@ -118,7 +128,7 @@ const Explore = () => {
               </div>
             </div> */}
         </div>
-        {currentProjectID === -1 && (
+        {!currentProject && (
           <Discovery
             filters={filters}
             activeFilter={activeFilter}
@@ -127,8 +137,8 @@ const Explore = () => {
             appCardClicked={appCardClicked}
           />
         )}
-        {currentProjectID !== -1 && (
-          <ProjectView project={""} setActiveProject={setCurrentProjectID} />
+        {currentProject && (
+          <ProjectView project={""} setCurrentProject={setCurrentProject} />
         )}
       </div>
       <Footer />

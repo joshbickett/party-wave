@@ -1,11 +1,14 @@
 import icon from "../assets/icon.png";
 import { Button } from "@mui/material";
 
-const ProjectView = ({ project, setActiveProject }) => {
+const ProjectView = ({ project, setCurrentProject }) => {
   console.log("project", project);
   return (
     <div>
-      <Button style={{ margin: "10px" }} onClick={() => setActiveProject(-1)}>
+      <Button
+        style={{ margin: "10px" }}
+        onClick={() => setCurrentProject(null)}
+      >
         Go back
       </Button>
       <div

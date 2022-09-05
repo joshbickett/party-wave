@@ -80,7 +80,7 @@ const Discovery = ({
         <h3 style={{ margin: "10px" }}>Projects</h3>
 
         <div style={{ padding: "0 20px" }}>
-          {projects?.map((record, index) => {
+          {projects?.map((project) => {
             return (
               <AppCard
                 style={{
@@ -89,7 +89,7 @@ const Discovery = ({
                   gridGap: "5px",
                 }}
                 onClick={(e) => {
-                  appCardClicked(e, index);
+                  appCardClicked(e, project);
                 }}
               >
                 <div
@@ -125,7 +125,7 @@ const Discovery = ({
                       padding: "0",
                     }}
                   >
-                    {record[1]}
+                    {project?.name}
                   </div>
                   <div
                     class="text-secondary"
@@ -134,7 +134,7 @@ const Discovery = ({
                       color: "#383838",
                     }}
                   >
-                    {record[2]}
+                    {project?.description}
                   </div>
                 </div>
                 <div
@@ -145,7 +145,7 @@ const Discovery = ({
                   }}
                 >
                   <span class="badge badge-secondary" style={{ margin: "1px" }}>
-                    {/* {record[4]} */}
+                    {project?.details && project?.details?.category}
                   </span>
                 </div>
                 <div
@@ -163,7 +163,7 @@ const Discovery = ({
                       fontSize: "20px",
                     }}
                   >
-                    {record[5]} 🌊
+                    {project?.votes} 🌊
                   </span>
                 </div>
                 <div
