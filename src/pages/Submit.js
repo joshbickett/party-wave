@@ -9,6 +9,7 @@ import { Button } from "@mui/material";
 const Submit = () => {
   const [activeTab, setActiveTab] = useState("app");
   const [record, setRecord] = useState({});
+  const [completed, setCompleted] = useState(false);
 
   const tabs = [
     {
@@ -325,19 +326,37 @@ const Submit = () => {
                       style={{ width: "300px", margin: "10px 0" }}
                     />
                   </div>
-                  <Button
-                    type="submit"
-                    variant="contained"
-                    onClick={() => {
-                      submitProject();
-                    }}
-                    style={{
-                      margin: "20px 0",
-                      width: "300px",
-                    }}
-                  >
-                    Submit a project
-                  </Button>
+                  {!completed && (
+                    <Button
+                      type="submit"
+                      variant="contained"
+                      onClick={() => {
+                        submitProject();
+                        setCompleted(true);
+                      }}
+                      style={{
+                        margin: "20px 0",
+                        width: "300px",
+                      }}
+                    >
+                      Submit a project
+                    </Button>
+                  )}
+                  {completed && (
+                    <div
+                      style={{
+                        background: "#7546C6",
+                        color: "white",
+                        width: "300px",
+                        padding: "5px",
+                        borderRadius: "5px",
+                        display: "flex",
+                        justifyContent: "center",
+                      }}
+                    >
+                      SUBMISSION COMPLETE!
+                    </div>
+                  )}
                 </div>
               );
             }
