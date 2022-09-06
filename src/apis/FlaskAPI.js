@@ -1,5 +1,5 @@
-const url = "http://127.0.0.1:5000";
-// const url = "https://partywave.ai/apis";
+// const url = "http://127.0.0.1:5000";
+const url = "https://partywave.ai/apis";
 
 export const getContent = async () => {
   var formdata = new FormData();
