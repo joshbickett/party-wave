@@ -10,6 +10,7 @@ const Submit = () => {
   const [activeTab, setActiveTab] = useState("app");
   const [record, setRecord] = useState({});
   const [completed, setCompleted] = useState(false);
+  const [missingFields, setMissingFields] = useState(false);
 
   const tabs = [
     {
@@ -44,6 +45,7 @@ const Submit = () => {
 
   const submitProject = () => {
     console.log("record:", record);
+
     if (
       record.name &&
       record.description &&
@@ -54,6 +56,13 @@ const Submit = () => {
     ) {
       console.log("submitted!");
       submit(record);
+      setCompleted(true);
+    } else {
+      console.log("not submitted, please fill out all fields");
+      setMissingFields(true);
+      setTimeout(() => {
+        setMissingFields(false);
+      }, 10000);
     }
   };
 
@@ -326,14 +335,16 @@ const Submit = () => {
                       style={{ width: "300px", margin: "10px 0" }}
                     />
                   </div>
+                  {missingFields && (
+                    <div style={{ color: "red" }}>
+                      Please fill out all the required fields
+                    </div>
+                  )}
                   {!completed && (
                     <Button
                       type="submit"
                       variant="contained"
-                      onClick={() => {
-                        submitProject();
-                        setCompleted(true);
-                      }}
+                      onClick={submitProject}
                       style={{
                         margin: "20px 0",
                         width: "300px",
