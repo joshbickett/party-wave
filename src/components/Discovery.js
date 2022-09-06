@@ -154,10 +154,15 @@ const Discovery = ({
                     }}
                   >
                     <span
-                      class="badge badge-secondary"
-                      style={{ margin: "1px" }}
+                      style={{
+                        margin: "1px",
+                        backgroundColor: "#0C9291",
+                        color: "white",
+                        padding: "10px",
+                        borderRadius: "5px",
+                      }}
                     >
-                      {project?.details && project?.details?.category}
+                      {project?.type}
                     </span>
                   </div>
                   <div
