@@ -197,7 +197,9 @@ const Discovery = ({
             })}
         </div>
         {/* <Button style={{ color: "#0b807f" }}>See more</Button> */}
-        <div style={{ color: "#0F6969" }}>More projects coming soon</div>
+        <div style={{ color: "#0F6969", margin: "20px" }}>
+          More projects coming soon
+        </div>
         <div></div>
       </div>
     </div>
